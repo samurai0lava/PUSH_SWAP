@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-
 struct stack_node* createStack() 
 {
     struct stack_node* stack = (struct stack_node*)malloc(sizeof(struct stack_node));
@@ -52,9 +51,14 @@ int main(int argc, char **argv)
     int i; 
     stack_i *stack;
 
+
     if (argc < 2) {
         printf("dumb ass bitch");
         return 1;
+    }
+    if(argc == 2)
+    {
+        
     }
 
     i = 1;
