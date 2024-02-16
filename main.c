@@ -19,15 +19,21 @@ int main(int argc, char **argv)
 	stack_i *a;
 	stack_i *b;
 
-    if (argc == 1 || argc == 2 && argv[1] == NULL)
+    a = NULL;
+    b = NULL;
+    if (argc == 1 || argc == 2 && argv[1][0] == '\0')
+    {
+        ft_putendl_fd("Error: Invalid set of arguments", 2);
         return 1;
-    if(argc == 2)
-    {
-        argv = ft_split(argv[1], " ");
     }
-    if (argc > 2)
+    else if(argc == 2)
     {
-        
+        argv = ft_split(argv[1], ' ');
+        if (argv == NULL)
+        {
+            ft_putendl_fd("Error: Failed in split", 2);
+            return (1);       
+        }
     }
     //./push_swap "13 89 89"
 
