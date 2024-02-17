@@ -16,7 +16,4 @@ typedef struct stack_node
     struct stack_node *prev;
 } stack_i;
 
-char	**ft_split(char const *s, char c);
-int     ft_atoi(char *str);
-
 #endif
