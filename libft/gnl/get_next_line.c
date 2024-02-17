@@ -10,7 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
+
+static char	*free_null(char *content)
+{
+	free(content);
+	return (NULL);
+}
 
 static char	*rest(char *str)
 {

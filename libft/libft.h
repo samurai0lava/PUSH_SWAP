@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: iouhssei <iouhssei@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 12:02:12 by iouhssei          #+#    #+#             */
-/*   Updated: 2023/11/23 13:36:49 by iouhssei         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -18,6 +6,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
+# include <fcntl.h>
+# include <inttypes.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -69,5 +60,20 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+char	*get_next_line(int fd);
+char	*free_and_null(char *op);
+char	*free_null(char *str);
+
+int		ft_putchar(int c);
+int		ft_putstr(char *str);
+int		ft_putnbr_base(long nbr, int base, int check);
+int		ft_putptr(void *ptr);
+int		ft_printf(const char *format, ...);
 
 #endif
