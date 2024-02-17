@@ -52,6 +52,7 @@ SRCBONUSLIB = ./libft_bonus/ft_lstadd_back_bonus.c\
 
 SRCPRINTF = ./ft_printf/ft_printf.c\
 	./ft_printf/ft_printf.c
+    
 OBJ = $(SRC:.c=.o)
 
 OBJBONUS = $(SRCBONUS:.c=.o)
