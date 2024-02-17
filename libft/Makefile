@@ -6,42 +6,43 @@ CFLAGS = -Wall -Wextra -Werror
 
 AR = ar rc
 
-SRCLIB = ./libft_man/ft_bzero.c \
-    ./libft_man/ft_isalnum.c \
-    ./libft_man/ft_isascii.c\
-    ./libft_man/ft_isprint.c\
-    ./libft_man/ft_memchr.c\
-    ./libft_man/ft_memcpy.c\
-    ./libft_man/ft_memset.c \
-    ./libft_man/ft_strchr.c\
-    ./libft_man/ft_striteri.c\
-    ./libft_man/ft_strlcat.c\
-    ./libft_man/ft_strlen.c\
-    ./libft_man/ft_strncmp.c\
-    ./libft_man/ft_strrchr.c\
-    ./libft_man/ft_substr.c\
-    ./libft_man/ft_toupper.c\
-    ./libft_man/ft_atoi.c\
-    ./libft_man/ft_calloc.c\
-    ./libft_man/ft_isalpha.c\
-    ./libft_man/ft_isdigit.c\
-    ./libft_man/ft_itoa.c\
-    ./libft_man/ft_memcmp.c\
-    ./libft_man/ft_memmove.c\
-    ./libft_man/ft_split.c\
-    ./libft_man/ft_strdup.c\
-    ./libft_man/ft_strjoin.c\
-    ./libft_man/ft_strlcpy.c\
-    ./libft_man/ft_strmapi.c\
-    ./libft_man/ft_strnstr.c\
-    ./libft_man/ft_strtrim.c\
-    ./libft_man/ft_tolower.c\
-    ./libft_man/ft_putchar_fd.c\
-    ./libft_man/ft_putstr_fd.c\
-    ./libft_man/ft_putendl_fd.c\
-    ./libft_man/ft_putnbr_fd.c
+SRC = src/ft_bzero.c \
+    src/ft_isalnum.c \
+    src/ft_isascii.c\
+    src/ft_isprint.c\
+    src/ft_memchr.c\
+    src/ft_memcpy.c\
+    src/ft_memset.c \
+    src/ft_strchr.c\
+    src/ft_striteri.c\
+    src/ft_strlcat.c\
+    src/ft_strlen.c\
+    src/ft_strncmp.c\
+    src/ft_strrchr.c\
+    src/ft_substr.c\
+    src/ft_toupper.c\
+    src/ft_atoi.c\
+    src/ft_calloc.c\
+    src/ft_isalpha.c\
+    src/ft_isdigit.c\
+    src/ft_itoa.c\
+    src/ft_memcmp.c\
+    src/ft_memmove.c\
+    src/ft_split.c\
+    src/ft_strdup.c\
+    src/ft_strjoin.c\
+    src/ft_strlcpy.c\
+    src/ft_strmapi.c\
+    src/ft_strnstr.c\
+    src/ft_strtrim.c\
+    src/ft_tolower.c\
+    src/ft_putchar_fd.c\
+    src/ft_putstr_fd.c\
+    src/ft_putendl_fd.c\
+    src/ft_putnbr_fd.c\
     
-SRCBONUSLIB = ./libft_bonus/ft_lstadd_back_bonus.c\
+    
+SRCBONUS = ./libft_bonus/ft_lstadd_back_bonus.c\
     ./libft_bonus/ft_lstadd_front_bonus.c\
     ./libft_bonus/ft_lstclear_bonus.c\
     ./libft_bonus/ft_lstdelone_bonus.c\
@@ -52,7 +53,7 @@ SRCBONUSLIB = ./libft_bonus/ft_lstadd_back_bonus.c\
 
 SRCPRINTF = ./ft_printf/ft_printf.c\
 	./ft_printf/ft_printf.c
-    
+
 OBJ = $(SRC:.c=.o)
 
 OBJBONUS = $(SRCBONUS:.c=.o)
