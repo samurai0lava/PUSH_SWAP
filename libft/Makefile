@@ -57,15 +57,14 @@ SRC = src/ft_bzero.c \
 
 OBJ = $(SRC:.c=.o)
 
-
 all: $(NAME)
 
 $(NAME) : $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+	@$(AR) $(NAME) $(OBJ)
 
-$(OBJ) : $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
 
+.c.o :
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	rm -f $(OBJ)
