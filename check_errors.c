@@ -1,14 +1,6 @@
 #include "push_swap.h"
+#include "libft/libft.h"
 
-int ft_strlen(char *str)
-{
-	int i;
-
-	i = 0;
-	while(str[i])
-		i++;
-	return(i);
-}
 int check_errors_if_string(char *str)
 {
 	//i itterate the whole string finding other tahn spaces and numbers
@@ -17,6 +9,7 @@ int check_errors_if_string(char *str)
 	//else return 1;
 	int i;
 	int size;
+	int j;
 
 	size = ft_strlen(str);
 	i = 0;
@@ -37,7 +30,7 @@ int check_errors_if_string(char *str)
         j = 0;
         while(j < size - i - 1)
         {
-            if(array[j] == array[j + 1])
+            if(str[j] == str[j + 1])
                 return(1);
             j++;
         }
@@ -45,11 +38,21 @@ int check_errors_if_string(char *str)
     }
 }
 
-int check_errors_if_args(char **argv)
-{
+// int check_errors_if_args(char **argv)
+// {
 	
-}
+// }
 int main(int argc, char **argv)
 {
+	int i;
 
+	i = 0;
+	if(check_errors_if_string(argv[1]) == 0)
+	{
+		ft_putendl_fd("NO ERRORS", 2);
+	}
+	else
+	{
+		ft_putendl_fd("invalid input", 2);
+	}
 }
