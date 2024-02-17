@@ -49,10 +49,10 @@ int main(int argc, char **argv)
 	i = 0;
 	if(check_errors_if_string(argv[1]) == 0)
 	{
-		ft_putendl_fd("NO ERRORS", 2);
+		ft_printf("NO ERRORS");
 	}
 	else
 	{
-		ft_putendl_fd("invalid input", 2);
+		perror("invalid input");
 	}
 }
