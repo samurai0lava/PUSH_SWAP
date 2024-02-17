@@ -68,7 +68,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 char	*get_next_line(int fd);
 char	*free_and_null(char *op);
-char	*free_null(char *str);
 //PRINTF
 int		ft_putchar(int c);
 int		ft_putstr(char *str);

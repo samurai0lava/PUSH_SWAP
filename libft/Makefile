@@ -41,21 +41,22 @@ SRC = src/ft_bzero.c \
     src/ft_putendl_fd.c\
     src/ft_putnbr_fd.c\
     ft_printf/ft_printf.c\
-
-    
-    
-SRCBONUS = ./libft_bonus/ft_lstadd_back_bonus.c\
-    ./libft_bonus/ft_lstadd_front_bonus.c\
-    ./libft_bonus/ft_lstclear_bonus.c\
-    ./libft_bonus/ft_lstdelone_bonus.c\
-    ./libft_bonus/ft_lstlast_bonus.c\
-    ./libft_bonus/ft_lstnew_bonus.c\
-    ./libft_bonus/ft_lstsize_bonus.c\
-    ./libft_bonus/ft_lstiter_bonus.c\
+    ft_printf/ft_putchar.c\
+    ft_printf/ft_putnbr_base.c\
+    ft_printf/ft_putptr.c\
+    ft_printf/ft_putstr.c\
+    gnl/get_next_line.c\
+    libft_bonus/ft_lstadd_back_bonus.c\
+    libft_bonus/ft_lstadd_front_bonus.c\
+    libft_bonus/ft_lstclear_bonus.c\
+    libft_bonus/ft_lstdelone_bonus.c\
+    libft_bonus/ft_lstlast_bonus.c\
+    libft_bonus/ft_lstnew_bonus.c\
+    libft_bonus/ft_lstsize_bonus.c\
+    libft_bonus/ft_lstiter_bonus.c\
 
 OBJ = $(SRC:.c=.o)
 
-OBJBONUS = $(SRCBONUS:.c=.o)
 
 all: $(NAME)
 
@@ -65,14 +66,9 @@ $(NAME) : $(OBJ)
 $(OBJ) : $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 
-$(OBJBONUS) : $(SRCBONUS)
-	$(CC) $(CFLAGS) -c $(SRCBONUS)
-	$(AR) $(NAME) $(OBJBONUS)
-
-bonus : $(OBJBONUS)
 
 clean :
-	rm -f $(OBJ) $(OBJBONUS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

@@ -9,7 +9,7 @@
 /*   Updated: 2023/11/27 21:15:13 by iouhssei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../libft.h"
 
 static int	ft_printhex(unsigned long nbr)
 {

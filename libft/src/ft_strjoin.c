@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strjoin(char *stash, char *buffer)
+char	*ft_strjoin(const char *stash, const char *buffer)
 {
 	char	*line;
 	size_t	i;
