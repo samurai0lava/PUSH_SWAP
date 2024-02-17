@@ -40,7 +40,8 @@ SRC = src/ft_bzero.c \
     src/ft_putstr_fd.c\
     src/ft_putendl_fd.c\
     src/ft_putnbr_fd.c\
-    
+    ft_printf/ft_printf.c\
+
     
     
 SRCBONUS = ./libft_bonus/ft_lstadd_back_bonus.c\
@@ -51,9 +52,6 @@ SRCBONUS = ./libft_bonus/ft_lstadd_back_bonus.c\
     ./libft_bonus/ft_lstnew_bonus.c\
     ./libft_bonus/ft_lstsize_bonus.c\
     ./libft_bonus/ft_lstiter_bonus.c\
-
-SRCPRINTF = ./ft_printf/ft_printf.c\
-	./ft_printf/ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 
