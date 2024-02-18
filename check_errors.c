@@ -53,6 +53,6 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		perror("invalid input");
+		"invalid input");
 	}
 }
