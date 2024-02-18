@@ -45,7 +45,6 @@ int pop(struct stack_node* stack)
     return data;
 }
 
-
 int main(int argc, char **argv)
 {
     int i; 
