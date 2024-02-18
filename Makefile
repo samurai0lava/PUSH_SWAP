@@ -7,5 +7,4 @@ SRC = push_swap.c\
 	stack_op.c\
 	utils.c\
 	check_errors.c\
-
-
+	
