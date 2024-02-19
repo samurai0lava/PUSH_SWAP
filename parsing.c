@@ -40,11 +40,12 @@ void check_inputs(int argc, char **str)
     // }
 }
 //./push_swap " 1 2" "1 0" 1 3 77 9 "" = 
-void split_args(int argc,char **argv)
+char **split_args(int argc,char **argv)
 {
 	int i;
 	int j;
 	static char *arg;
+	char **splitted;
 	i = 2;
 
 	while(argv[i] != '\0')
@@ -53,32 +54,60 @@ void split_args(int argc,char **argv)
 		i++;
 	}
 	free(argv);
-	argv = ft_split(arg, ' ');
+	splitted = ft_split(arg, ' ');
 }
 
 int sizeof_argv(char **argv)
 {
 	int size;
+	//calculate the size of the argv splited (how much integer need to be parsed)
 
 	return (size);
 }
-int *atoi_ad(int argc, char **argv)
+int *atoi_ad(int argc, char **splitted)
 {
-	int *array;
 	int i;
+	int size;
+	int *array;
 
-	array = (int *)malloc(argc * sizeof(int));
+	size = sizeof_argv(argv);
+	array = (int *)malloc(size * sizeof(int));
 	if(!array)
-		error_quit("Error : Malloc Failed!");
+		return(1);
 	while (argv[i])
 	{
-		
+		array[i] = ft_atoi(argv[i]);
+		i++;
 	}
+	return(array);
 }
+void check_duplicate(int *array)
+{
+	int i;
+	int size;
 
-
+	i = 0;
+	while (i < size)
+    {
+        j = 0;
+        while(j < size - i - 1)
+        {
+            if(array[j] == array[j + 1])
+                error_quit("Error : Duplicate");
+            j++;
+        }
+        i++;
+    }
+}
 
 int main(int argc, char **argv)
 {
+	char **splitted;
+	int *array;
+	
 	check_inputs(argc ,argv);
+	splitted = split_args(argc, argv);
+	array = atoi_ad(argc, splitted);
+	check_duplicate(array);
+	return (0);
 }
