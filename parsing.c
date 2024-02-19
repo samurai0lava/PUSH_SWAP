@@ -70,13 +70,13 @@ int *atoi_ad(int argc, char **splitted)
 	int size;
 	int *array;
 
-	size = sizeof_argv(argv);
+	size = sizeof_argv(splitted);
 	array = (int *)malloc(size * sizeof(int));
 	if(!array)
 		return(1);
-	while (argv[i])
+	while (splitted[i])
 	{
-		array[i] = ft_atoi(argv[i]);
+		array[i] = ft_atoi(splitted[i]);
 		i++;
 	}
 	return(array);
