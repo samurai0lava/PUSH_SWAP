@@ -10,9 +10,11 @@ void check_errors_if_string(char *str)
 	int size;
 	int j;
 
+	if(str == NULL)
+		return;
 	size = ft_strlen(str);
 	i = 0;
-	while((str[i] >= '0' && str[i] <= '9') || str[i] == ' ')
+	while((str[i] >= '0' && str[i] <= '9') || str[i] == ' ' || str[i] == '+' || str[i] == '-')
 	{
 		i++;
 	}
