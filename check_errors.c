@@ -15,9 +15,7 @@ void check_errors_if_string(char *str)
 	size = ft_strlen(str);
 	i = 0;
 	while((str[i] >= '0' && str[i] <= '9') || str[i] == ' ' || str[i] == '+' || str[i] == '-')
-	{
 		i++;
-	}
 	if(i != size)
 		perror("Invalid set of arguments: <usage>");
 
@@ -36,6 +34,7 @@ void check_errors_if_string(char *str)
         i++;
     }
 }
+
 
 int main(int argc, char **argv)
 {
