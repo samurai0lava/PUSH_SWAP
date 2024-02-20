@@ -62,16 +62,17 @@ int sizeof_argv(char **argv)
 	int size;
 	//calculate the size of the argv splited (how much integer need to be parsed)
 
+
 	return (size);
 }
 int *atoi_ad(int argc, char **splitted)
 {
 	int i;
-	int size;
+//	int size;
 	int *array;
 
-	size = sizeof_argv(splitted);
-	array = (int *)malloc(size * sizeof(int));
+	i = 0;
+	array = (int *)malloc(sizeof(*splitted) * sizeof(int));
 	if(!array)
 		return(1);
 	while (splitted[i])
@@ -85,6 +86,7 @@ void check_duplicate(int *array)
 {
 	int i;
 	int size;
+	int j;
 
 	i = 0;
 	while (i < size)
