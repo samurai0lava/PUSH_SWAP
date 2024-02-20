@@ -18,24 +18,80 @@ void check_inputs(int argc, char **argv)
             j++;
         }
     }
+	for (i = 0; i < argc; i++)
+	{
+		j = 0;
+		while(argv[i][j])
+		{
+			if(argv[i][j] == '-' && argv[i][j+1] == '-')
+				error_quit("Invalid set of arguments: <usage>");
+			else if ()
+			{
+				
+			}			
+		}
+	}
+	
 }
+
+// char **split_args(int argc, char **argv)
+// {
+// 	int i;
+// 	int j;
+// 	static char *arg;
+// 	char **splitted;
+// 	i = 1;
+
+// 	while (argv[i] != NULL)
+// 	{
+// 		arg = ft_strjoin(argv[1], argv[i]);
+// 		i++;
+// 	}
+// 	splitted = ft_split(arg, ' ');
+// 	return (splitted);
+// }
+
+
 
 char **split_args(int argc, char **argv)
 {
-	int i;
-	int j;
-	static char *arg;
-	char **splitted;
-	i = 2;
+    if (argc < 2 || argv == NULL) // Check for valid arguments
+        return NULL;
 
-	while (argv[i] != NULL)
-	{
-		arg = ft_strjoin(argv[1], argv[i]);
-		i++;
-	}
-	splitted = ft_split(arg, ' ');
-	return (splitted);
+    int i;
+    char *arg = NULL;
+    char **splitted = NULL;
+
+    // Calculate total length of arguments
+    size_t total_length = 0;
+    for (i = 1; i < argc; i++) {
+        total_length += strlen(argv[i]);
+    }
+
+    // Allocate memory for concatenated arguments
+    arg = (char *)malloc(total_length + argc - 1); // + argc - 1 for space characters
+    if (arg == NULL) {
+        return NULL; // Memory allocation failed
+    }
+
+    // Concatenate all arguments into arg
+    arg[0] = '\0'; // Ensure arg is an empty string
+    for (i = 1; i < argc; i++) {
+        strcat(arg, argv[i]);
+        if (i < argc - 1) {
+            strcat(arg, " "); // Add space between arguments
+        }
+    }
+
+    // Split the concatenated string into separate arguments
+    splitted = ft_split(arg, ' ');
+
+    // Free the memory allocated for the concatenated string
+    free(arg);
+
+    return splitted;
 }
+
 
 int *atoi_ad(int argc, char **splitted)
 {
@@ -52,14 +108,11 @@ int *atoi_ad(int argc, char **splitted)
 	return (array);
 }
 
-int check_duplicate(int *array)
+void check_duplicate(int *array, int size)
 {
 	int i;
-	int size;
 	int j;
 
-	size = sizeof(*array) / sizeof(int);
-	printf("%d", size);
 	i = 0;
 	while (i < size)
 	{
@@ -72,7 +125,6 @@ int check_duplicate(int *array)
 		}
 		i++;
 	}
-	return (size);
 }
 
 int main(int argc, char **argv)
@@ -83,11 +135,21 @@ int main(int argc, char **argv)
 
 	check_inputs(argc, argv);
 	splitted = split_args(argc, argv);
+	// while (i < 7)
+	// {
+	// 	printf("%s\n", splitted[i]);
+	// 	i++;
+	// }
 	// for (i = 0; splitted[i]; i++)
 	// 	ft_printf("%s\n", splitted[i]);
-	// array = atoi_ad(argc, splitted);
-
-	// int size = check_duplicate(array);
+	array = atoi_ad(argc, splitted);
+	i = 0;
+	while (i < 5)
+	{
+		printf("%d\n", array[i]);
+		i++;
+	}
+	check_duplicate(array, 5);
 	// for (i = 0; i < size; i++)
 	// 	ft_printf("%d\n", array[i]);
 	// return (0);
