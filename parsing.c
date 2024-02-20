@@ -59,6 +59,7 @@ int check_duplicate(int *array)
 	int j;
 
 	size = sizeof(*array) / sizeof(int);
+	printf("%d", size);
 	i = 0;
 	while (i < size)
 	{
@@ -82,12 +83,12 @@ int main(int argc, char **argv)
 
 	check_inputs(argc, argv);
 	splitted = split_args(argc, argv);
-	for (i = 0; splitted[i]; i++)
-		ft_printf("%s\n", splitted[i]);
-	array = atoi_ad(argc, splitted);
+	// for (i = 0; splitted[i]; i++)
+	// 	ft_printf("%s\n", splitted[i]);
+	// array = atoi_ad(argc, splitted);
 
-	int size = check_duplicate(array);
-	for (i = 0; i < size; i++)
-		ft_printf("%d\n", array[i]);
-	return (0);
+	// int size = check_duplicate(array);
+	// for (i = 0; i < size; i++)
+	// 	ft_printf("%d\n", array[i]);
+	// return (0);
 }
