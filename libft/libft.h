@@ -44,6 +44,7 @@ void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *str);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char *stash, char *buffer);
+char				*ft_strjoin_sep(int size, char **strs, char *sep);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);

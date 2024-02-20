@@ -40,6 +40,7 @@ SRC = src/ft_bzero.c \
     src/ft_putstr_fd.c\
     src/ft_putendl_fd.c\
     src/ft_putnbr_fd.c\
+    src/ft_strjoin_sep.c\
     ft_printf/ft_printf.c\
     ft_printf/ft_putchar.c\
     ft_printf/ft_putnbr_base.c\
