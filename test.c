@@ -35,10 +35,6 @@ int check_duplicate(int *array, int size)
 
 int main()
 {
-
-    // char *arr[] = {"hello", "ydik", "feh"};
-    // int size = sizeof(arr) / sizeof(arr[0]);
-    // printf("%d\n", size);
     int array[] = {1,1,3,4,7,99,0,1};
     int size = sizeof(array) / sizeof(array[0]);
     printf("%d\n", size);
