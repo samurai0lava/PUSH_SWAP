@@ -5,33 +5,41 @@ void error_quit(char *str)
 	ft_putendl_fd(str, 2);
 	return;
 }
-void check_inputs(int argc, char **argv) 
+int check_inputs(int argc, char **argv) 
 {
     int i; 
 	int j;
 
-    for (i = 1; i < argc; i++) {
+	i = 1;
+    while (i < argc) 
+	{
         j = 0;
-        while (argv[i][j]) {
+        while (argv[i][j]) 
+		{
             if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
-                error_quit("Invalid set of arguments: <usage>");
+                return(1);
             j++;
         }
+		i++;
     }
-	for (i = 0; i < argc; i++)
+
+	while (i < argc)
 	{
 		j = 0;
 		while(argv[i][j])
 		{
 			if(argv[i][j] == '-' && argv[i][j+1] == '-')
-				error_quit("Invalid set of arguments: <usage>");
-			else if ()
-			{
-				
-			}			
+				return (1);
+			else if (argv[i][j] == '-' && argv[i][j + 1] == '+')
+				return (1);
+			else if (argv[i][j] == '+' && argv[i][j + 1] == '+')
+				return (1);
+			else if (argv[i][j] == '+' && argv[i][j + 1] == '-')
+				return (1);
+			j++;
 		}
+		i++;
 	}
-	
 }
 
 // char **split_args(int argc, char **argv)
@@ -59,28 +67,33 @@ char **split_args(int argc, char **argv)
         return NULL;
 
     int i;
-    char *arg = NULL;
-    char **splitted = NULL;
+    char *arg;
+    char **splitted;
 
+	arg = NULL;
+	splitted = NULL;
     // Calculate total length of arguments
     size_t total_length = 0;
-    for (i = 1; i < argc; i++) {
+	i = 1;
+    while(i < argc) 
+	{
         total_length += strlen(argv[i]);
+		i++;
     }
-
     // Allocate memory for concatenated arguments
     arg = (char *)malloc(total_length + argc - 1); // + argc - 1 for space characters
-    if (arg == NULL) {
+    if (arg == NULL) 
         return NULL; // Memory allocation failed
-    }
 
     // Concatenate all arguments into arg
     arg[0] = '\0'; // Ensure arg is an empty string
-    for (i = 1; i < argc; i++) {
+	i = 1;
+    while(i < argc) 
+	{
         strcat(arg, argv[i]);
-        if (i < argc - 1) {
+        if (i < argc - 1) 
             strcat(arg, " "); // Add space between arguments
-        }
+		i++;
     }
 
     // Split the concatenated string into separate arguments
@@ -89,9 +102,8 @@ char **split_args(int argc, char **argv)
     // Free the memory allocated for the concatenated string
     free(arg);
 
-    return splitted;
+    return (splitted);
 }
-
 
 int *atoi_ad(int argc, char **splitted)
 {
@@ -133,7 +145,9 @@ int main(int argc, char **argv)
 	int *array;
 	int i;
 
-	check_inputs(argc, argv);
+	if(check_inputs(argc, argv) == 1)
+		error_quit("Invalid set of arguments: <usage>");
+		
 	splitted = split_args(argc, argv);
 	// while (i < 7)
 	// {
