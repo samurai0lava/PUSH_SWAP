@@ -126,6 +126,8 @@ int main(int argc, char **argv)
 	char **splitted;
 	int *array;
 	int i;
+	if (argc < 2 || argv == NULL)
+        return 1;
 
 	if(check_inputs(argc, argv) == 1)
 		error_quit("Invalid set of arguments: <usage>");
