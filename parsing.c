@@ -94,7 +94,6 @@ char **split_args(int argc, char **argv) {
 
     if (argc < 2 || argv == NULL)
         return NULL;
-
     arg = NULL;
     splitted = NULL;
     total_length = 0;
@@ -104,7 +103,6 @@ char **split_args(int argc, char **argv) {
         total_length += ft_strlen(argv[i]);
         i++;
     }
-
     arg = (char *)malloc(total_length + argc - 1);
     if (!arg)
         return (NULL);

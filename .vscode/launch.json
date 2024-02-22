@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/a.out", // Path to your compiled executable
+            "args": [], // Command line arguments to pass to the program
+            "cwd": "${workspaceFolder}", // Working directory for the debugger
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb", // Path to your GDB debugger
+        }
+    ]
+}
