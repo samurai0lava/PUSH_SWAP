@@ -120,33 +120,40 @@ int check_duplicate(int *array, int size)
 	}
 	return (0);
 }
-
-int main(int argc, char **argv)
+int *parsing(int argc, char **argv)
 {
 	char **splitted;
 	int *array;
 	int i;
-	if (argc < 2 || argv == NULL)
-        return 1;
+	int size;
 
+	if (argc < 2 || argv == NULL)
+        return (NULL);
 	if(check_inputs(argc, argv) == 1)
 		error_quit("Invalid set of arguments: <usage>");
-		
 	splitted = split_args(argc, argv);
-	while (i < 7)
-	{
-		printf("%s\n", splitted[i]);
-		i++;
-	}
-	ft_printf("\n");
 	array = atoi_ad(argc, splitted);
-	i = 0;
-	while (i < 7)
+	size = sizeof(*splitted) * sizeof(int);
+	free(splitted);
+	for (int i = 0; i < 10; i++)
+		ft_printf("%d", array[i]);
+	ft_printf("\n");
+	if(check_duplicate(array, size) == 1)
 	{
-		printf("%d\n", array[i]);
-		i++;
-	}
-	if(check_duplicate(array, 7) == 1)
 		error_quit("Error : Duplicate");
-	return (0);
+		free(array);
+	}
+	else
+		return(array);
+	return(NULL);	
+}
+int main(int argc, char **argv)
+{
+	int *array = parsing(argc, argv);
+	if (array == NULL)
+	{
+		error_quit("error ?");
+		return 1;	
+	}
+	return 0;
 }
