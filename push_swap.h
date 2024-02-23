@@ -17,4 +17,12 @@ typedef struct stack_node
     struct stack_node *prev;
 } stack_i;
 
+int		check_duplicate(int *array, size_t size);
+int		*parsing(int argc, char **argv);
+void	error_quit(char *str);
+int		check_inputs(int argc, char **argv);
+char	**split_args(int argc, char **argv);
+int		*atoi_ad(int argc, char **splitted);
+stack_i	init(stack_i a, int *array);
+
 #endif

@@ -26,15 +26,15 @@ int main(int argc, char **argv)
         ft_putendl_fd("Error: Invalid set of arguments", 2);
         return 1;
     }
-    else if(argc == 2)
+    else
     {
-        argv = ft_split(argv[1], ' ');
-        if (argv == NULL)
+        array = parsing(argc, argv);
+        while(array != NULL)
         {
-            ft_putendl_fd("Error: Failed in split", 2);
-            return (1);       
+            push(a, array[i]);
+            i++;
         }
-    }
+    }  
     //./push_swap "13 89 89"
 
 }

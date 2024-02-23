@@ -1,10 +1,5 @@
 #include "push_swap.h"
 
-void error_quit(char *str)
-{
-	ft_putendl_fd(str, 2);
-	return;
-}
 int check_inputs(int argc, char **argv) 
 {
     int i; 
