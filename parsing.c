@@ -51,42 +51,8 @@ int check_inputs(int argc, char **argv)
 	return (0);
 }
 
-// char **split_args(int argc, char **argv)
-// {
-//     int i;
-//     char *arg;
-//     char **splitted;
-// 	size_t total_length;
-
-// 	if (argc < 2 || argv == NULL)
-//         return NULL;
-// 	arg = NULL;
-// 	splitted = NULL;	
-// 	total_length = 0;
-// 	i = 1;
-//     while(i < argc) 
-// 	{
-//         total_length += ft_strlen(argv[i]);
-// 		i++;
-//     }
-//     arg = (char *)malloc(total_length + argc - 1);
-//     if (!arg) 
-//         return (NULL);
-//     arg[0] = '\0';
-// 	i = 1;
-//     while(i < argc) 
-// 	{
-//         strcat(arg, argv[i]);
-//         if (i < argc - 1) 
-//             strcat(arg, " ");
-// 		i++;
-//     }
-//     splitted = ft_split(arg, ' ');
-//     free(arg);
-//     return (splitted);
-// }
-
-char **split_args(int argc, char **argv) {
+char **split_args(int argc, char **argv) 
+{
     int i;
     char *arg;
     char **splitted;
@@ -134,93 +100,16 @@ int *atoi_ad(int argc, char **splitted)
 		array[i] = ft_atoi(splitted[i]);
 		i++;
 	}
-	free(splitted);
 	return (array);
 }
 
-int check_duplicate(int *array, size_t size)
-{
-	size_t i;
-	size_t j;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (array[i] == array[j])
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
-// int *parsing(int argc, char **argv)
+// int main(int argc, char **argv)
 // {
-// 	char **splitted;
-// 	int *array;
-// 	int i;
-// 	int size;
-
-// 	if (argc < 2 || argv == NULL)
-//         return (NULL);
-// 	if(check_inputs(argc, argv) == 1)
-// 		error_quit("Invalid set of arguments: <usage>");
-// 	splitted = split_args(argc, argv);
-// 	array = atoi_ad(argc, splitted);
-// 	size = sizeof(*splitted) * sizeof(int);
-// 	free(splitted);
-// 	for (int i = 0; i < 10; i++)
-// 		ft_printf("%d", array[i]);
-// 	ft_printf("\n");
-// 	if(check_duplicate(array, size) == 1)
+// 	int *array = parsing(argc, argv);
+// 	if (array == NULL)
 // 	{
-// 		error_quit("Error : Duplicate");
-// 		free(array);
+// 		error_quit("error ?");
+// 		return 1;	
 // 	}
-// 	else
-// 		return(array);
-// 	return(NULL);	
+// 	return 0;
 // }
-
-int *parsing(int argc, char **argv)
-{
-    char **splitted;
-    int *array;
-    int i;
-    size_t size;
-
-    if (argc < 2 || argv == NULL)
-        return (NULL);
-    if(check_inputs(argc, argv) == 1)
-        error_quit("Invalid set of arguments: <usage>");
-    splitted = split_args(argc, argv);
-    array = atoi_ad(argc, splitted);
-    size = 0;
-    while (splitted[size] != NULL) 
-        size++;
-
-    for (int i = 0; i < size; i++)
-        ft_printf("%d", array[i]);
-    ft_printf("\n");
-    if(check_duplicate(array, size) == 1)
-    {
-        error_quit("Error : Duplicate");
-        free(array);
-    }
-    else
-        return(array);
-    return(NULL);   
-}
-int main(int argc, char **argv)
-{
-	int *array = parsing(argc, argv);
-	if (array == NULL)
-	{
-		error_quit("error ?");
-		return 1;	
-	}
-	return 0;
-}
