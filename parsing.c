@@ -134,6 +134,7 @@ int *atoi_ad(int argc, char **splitted)
 		array[i] = ft_atoi(splitted[i]);
 		i++;
 	}
+	free(splitted);
 	return (array);
 }
 
