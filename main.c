@@ -33,7 +33,8 @@ int main(int argc, char **argv)
     {
         re.array = parsing(argc, argv);
         re.size = parsing(argc,argv);
-        init(&a, re.array, re.size);
+        init(&a, re);
+        
 
 
 
