@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     }
     else
     {
-
+        
     }  
     //./push_swap "13 89 89"
 

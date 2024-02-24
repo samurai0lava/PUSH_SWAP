@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-struct stack_node* createStack() 
+stack_i *createStack() 
 {
     struct stack_node* stack = (struct stack_node*)malloc(sizeof(struct stack_node));
     if (!stack) 

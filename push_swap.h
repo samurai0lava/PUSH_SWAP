@@ -23,6 +23,10 @@ void	error_quit(char *str);
 int		check_inputs(int argc, char **argv);
 char	**split_args(int argc, char **argv);
 int		*atoi_ad(int argc, char **splitted);
-stack_i	init(stack_i a, int *array);
+void    init(stack_i a, int *array);
+stack_i *createStack();
+int     isEmpty(struct stack_node* stack);
+void    push(struct stack_node* stack, int data);
+int     size(char **splited);
 
 #endif

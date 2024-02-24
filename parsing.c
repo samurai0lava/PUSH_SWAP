@@ -80,6 +80,15 @@ char **split_args(int argc, char **argv)
     free(arg);
     return (splitted);
 }
+int size(char **splited)
+{
+	int size;
+	
+	size = 0;
+	while(splited[size] != NULL)
+		size++;
+	return (size);
+}
 
 int *atoi_ad(int argc, char **splitted)
 {
