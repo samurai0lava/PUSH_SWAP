@@ -90,7 +90,7 @@ int size(char **splited)
 	return (size);
 }
 
-int *atoi_ad(int argc, char **splitted)
+int *atoi_ad(char **splitted)
 {
 	int i;
 	int *array;

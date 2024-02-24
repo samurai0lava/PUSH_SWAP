@@ -18,29 +18,34 @@ int main(int argc, char **argv)
     //
 	stack_i *a;
 	stack_i *b;
-    array_s re;
+    array_s *re;
 
     a = NULL;
     b = NULL;
-    re.array= NULL;
-    re.size = 0;
-    if (argc == 1 || argc == 2 && argv[1][0] == '\0')
+    re->array= NULL;
+    re->size = 0;
+    if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))
     {
         ft_putendl_fd("Error: Invalid set of arguments", 2);
         return (1);
     }
     else
     {
-        re.array = parsing(argc, argv);
-        re.size = parsing(argc,argv);
-        init(&a, re);
+        re = parsing(argc,argv);
+        init(&a, re);    
+        if(!isEmpty(a))
+        {
+            printf("Elements of the stack after pushing:\n");
+            struct stack_node *current = a->top;
+            while (current != NULL) 
+            {
+                printf("%d\n", current->data);
+                current = current->next;
+            }
+        }
+        else
+            printf("Stack is empty or not initialized properly\n");
     }
-    printf("Elements of the stack after pushing:\n");
-    stack_i current = a->top;
-    while (current != NULL) 
-    {
-        printf("%d\n", current->data);
-        current = current->next;
-    }
+    return(0);
     //./push_swap "13 89 89"
 }

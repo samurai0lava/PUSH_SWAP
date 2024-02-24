@@ -24,16 +24,16 @@ else
 }
 
 printf("Elements of the stack after pushing:\n");
-if (a != NULL && a->top != NULL) 
+if (!isEmpty(a)) 
 { // Check if stack 'a' is initialized and not empty
-    stack_i current = a->top;
+    struct stack_node* current = a->top;
     while (current != NULL) 
     {
         printf("%d\n", current->data);
         current = current->next;
     }
 } 
-else 
+else
     printf("Stack is empty or not initialized properly\n");
 
 return 0;

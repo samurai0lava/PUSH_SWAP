@@ -26,28 +26,28 @@ int check_duplicate(int *array, size_t size)
 	return (0);
 }
 
-array_s parsing(int argc, char **argv)
+array_s *parsing(int argc, char **argv)
 {
     char **splitted;
     // int *array;
     int i;
     // int size;
-    array_s re;
+    array_s *re;
 
     if (argc < 2 || argv == NULL)
-        return (NULL);
+        return;
     if(check_inputs(argc, argv) == 1)
         error_quit("Invalid set of arguments: <usage>");
     splitted = split_args(argc, argv);
-    re.array = atoi_ad(argc, splitted);
-    re.size = size_sp(splitted);
+    re->array = atoi_ad(splitted);
+    re->size = size_sp(splitted);
     // for (int i = 0; i < size; i++)
     //     ft_printf("%d", array[i]);
     // ft_printf("\n");
-    if(check_duplicate(re.array, re.size) == 1)
+    if(check_duplicate(re->array, re->size) == 1)
     {
         error_quit("Error : Duplicate");
-        free(re.array);
+        free(re->array);
     }
     else
         return(re);
