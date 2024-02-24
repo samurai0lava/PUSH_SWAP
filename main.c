@@ -34,11 +34,13 @@ int main(int argc, char **argv)
         re.array = parsing(argc, argv);
         re.size = parsing(argc,argv);
         init(&a, re);
-        
-
-
-
-        
-    }  
+    }
+    printf("Elements of the stack after pushing:\n");
+    stack_i current = a->top;
+    while (current != NULL) 
+    {
+        printf("%d\n", current->data);
+        current = current->next;
+    }
     //./push_swap "13 89 89"
 }
