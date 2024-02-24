@@ -46,32 +46,32 @@ int pop(struct stack_node* stack)
 }
 
 
-int main(int argc, char **argv)
-{
-    int     i; 
-    stack_i *stack;
+// int main(int argc, char **argv)
+// {
+//     int     i; 
+//     stack_i *stack;
 
-    if (argc < 2) 
-    {
-        ft_printf("dumb ass bitch");
-        return 1;
-    }
-    if(argc == 2)
-    {   
-    }
-    i = 1;
-    stack = createStack();
-    while(argv[i])
-    {
-        push(stack, atoi(argv[i]));
-        i++;
-    }
-    printf("Elements of the stack after pushing:\n");
-    struct stack_node* current = stack->top;
-    while (current != NULL) 
-    {
-        printf("%d\n", current->data);
-        current = current->next;
-    }
-    return 0;
-}
+//     if (argc < 2) 
+//     {
+//         ft_printf("dumb ass bitch");
+//         return 1;
+//     }
+//     if(argc == 2)
+//     {   
+//     }
+//     i = 1;
+//     stack = createStack();
+//     while(argv[i])
+//     {
+//         push(stack, atoi(argv[i]));
+//         i++;
+//     }
+//     printf("Elements of the stack after pushing:\n");
+//     struct stack_node* current = stack->top;
+//     while (current != NULL) 
+//     {
+//         printf("%d\n", current->data);
+//         current = current->next;
+//     }
+//     return 0;
+// }
