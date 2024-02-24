@@ -31,7 +31,7 @@ int *parsing(int argc, char **argv)
     char **splitted;
     int *array;
     int i;
-    size_t size;
+    int size;
 
     if (argc < 2 || argv == NULL)
         return (NULL);
@@ -39,13 +39,10 @@ int *parsing(int argc, char **argv)
         error_quit("Invalid set of arguments: <usage>");
     splitted = split_args(argc, argv);
     array = atoi_ad(argc, splitted);
-    size = 0;
-    while (splitted[size] != NULL) 
-        size++;
-
-    for (int i = 0; i < size; i++)
-        ft_printf("%d", array[i]);
-    ft_printf("\n");
+    size = size_sp(splitted);
+    // for (int i = 0; i < size; i++)
+    //     ft_printf("%d", array[i]);
+    // ft_printf("\n");
     if(check_duplicate(array, size) == 1)
     {
         error_quit("Error : Duplicate");

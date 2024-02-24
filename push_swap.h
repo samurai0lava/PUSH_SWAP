@@ -27,6 +27,6 @@ void    init(stack_i a, int *array);
 stack_i *createStack();
 int     isEmpty(struct stack_node* stack);
 void    push(struct stack_node* stack, int data);
-int     size(char **splited);
+int     size_sp(char **splited);
 
 #endif

@@ -34,17 +34,20 @@
 // }
 
 int main()
-{
-    //int array[] = {1,1,3,4,7,99,0,1};
-    char **splitted;
-    
-    int size1 = sizeof(*splitted);
+{   
+    int i = 0;
+    int array[] = {1,1,3,4,7,99,0,1};
+  //  char **splitted;
+    while (array[i])
+    {
+        printf("%d",array[i]);
+        i++;
+    }
+    //int size1 = sizeof(*splitted);
     //int size = sizeof(array) / sizeof(array[0]);
-    printf("%d\n", size1);
     // if(check_duplicate(array, 8) == 1)
     //     printf("error");
     // else
     //     printf("all good");
     // return (0);
 }
-//./push_swap 1 2 3 "13 1"
