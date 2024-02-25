@@ -24,12 +24,12 @@ typedef struct array_size
 } array_s;
 
 int		check_duplicate(int *array, size_t size);
-int		*parsing(int argc, char **argv);
+array_s		*parsing(int argc, char **argv);
 void	error_quit(char *str);
 int		check_inputs(int argc, char **argv);
 char	**split_args(int argc, char **argv);
 int		*atoi_ad(int argc, char **splitted);
-void    init(stack_i *a, array_s re);
+void    init(stack_i *a, array_s *re);
 stack_i *createStack();
 int     isEmpty(struct stack_node* stack);
 void    push(struct stack_node* stack, int data);
