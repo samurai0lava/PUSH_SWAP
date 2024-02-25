@@ -34,8 +34,10 @@ array_s *parsing(int argc, char **argv)
     // int size;
     array_s *re;
 
+    re->array = NULL;
+    re->size = 0;
     if (argc < 2 || argv == NULL)
-        return;
+        return(re);
     if(check_inputs(argc, argv) == 1)
         error_quit("Invalid set of arguments: <usage>");
     splitted = split_args(argc, argv);
@@ -48,8 +50,9 @@ array_s *parsing(int argc, char **argv)
     {
         error_quit("Error : Duplicate");
         free(re->array);
-    }
-    else
+        re->array = NULL;
+        re->size = 0;
         return(re);
-    return;
+    }
+    return(re);
 }

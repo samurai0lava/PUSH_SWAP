@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     else
     {
         re = parsing(argc,argv);
-        init(&a, re);    
+        init(a, re);
         if(!isEmpty(a))
         {
             printf("Elements of the stack after pushing:\n");
