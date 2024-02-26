@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 
     a = NULL;
     b = NULL;
+    re = NULL;
     re->array= NULL;
     re->size = 0;
     if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))

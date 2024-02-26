@@ -30,12 +30,11 @@ array_s *parsing(int argc, char **argv)
 {
     char **splitted;
     // int *array;
-    int i;
+    // int i;
     // int size;
     array_s *re;
 
-    re->array = NULL;
-    re->size = 0;
+    re = NULL;
     if (argc < 2 || argv == NULL)
         return(re);
     if(check_inputs(argc, argv) == 1)
@@ -50,8 +49,7 @@ array_s *parsing(int argc, char **argv)
     {
         error_quit("Error : Duplicate");
         free(re->array);
-        re->array = NULL;
-        re->size = 0;
+        re = NULL;
         return(re);
     }
     return(re);
