@@ -23,9 +23,7 @@ int main(int argc, char **argv)
     a = NULL;
     b = NULL;
     re = NULL;
-    re->array= NULL;
-    re->size = 0;
-    if (argc == 1 || (argc == 2 && argv[1][0] == '\0'))
+    if (argc <= 1 || (argc == 2 && argv[1][0] == '\0'))
     {
         ft_putendl_fd("Error: Invalid set of arguments", 2);
         return (1);
@@ -40,7 +38,7 @@ int main(int argc, char **argv)
             struct stack_node *current = a->top;
             while (current != NULL) 
             {
-                printf("%d\n", current->data);
+                ft_printf("%d\n", current->data);
                 current = current->next;
             }
         }
