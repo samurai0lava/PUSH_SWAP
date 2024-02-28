@@ -108,6 +108,7 @@ int *atoi_ad(char **splitted)
 	return (array);
 }
 
+
 // int main(int argc, char **argv)
 // {
 // 	int *array = parsing(argc, argv);

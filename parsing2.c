@@ -41,6 +41,7 @@ array_s *parsing(int argc, char **argv)
         error_quit("Invalid set of arguments: <usage>");
     splitted = split_args(argc, argv);
     re->array = atoi_ad(splitted);
+    
     re->size = size_sp(splitted);
     // for (int i = 0; i < size; i++)
     //     ft_printf("%d", array[i]);
