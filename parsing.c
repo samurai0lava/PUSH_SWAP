@@ -80,6 +80,7 @@ char **split_args(int argc, char **argv)
     free(arg);
     return (splitted);
 }
+
 int size_sp(char **splited)
 {
 	int size;
