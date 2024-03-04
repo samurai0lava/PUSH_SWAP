@@ -1,13 +1,13 @@
 #include "push_swap.h"
 
-stack_i *createStack() 
-{
-    struct stack_node* stack = (struct stack_node*)malloc(sizeof(struct stack_node));
+stack_i *createStack() {
+    stack_i* stack = (stack_i*)malloc(sizeof(stack_i));
     if (!stack) 
-        return(NULL);
+        return NULL;
     stack->top = NULL;
-    return (stack);
+    return stack;
 }
+
 
 int isEmpty(struct stack_node* stack) 
 {

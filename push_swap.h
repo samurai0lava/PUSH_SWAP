@@ -30,7 +30,7 @@ void	error_quit(char *str);
 int		check_inputs(int argc, char **argv);
 char	**split_args(int argc, char **argv);
 int		*atoi_ad(char **splitted);
-void    init(stack_i *a, array_s *re);
+void    init(stack_i **a, array_s *re);
 stack_i *createStack();
 int     isEmpty(struct stack_node* stack);
 void    push(struct stack_node* stack, int data);

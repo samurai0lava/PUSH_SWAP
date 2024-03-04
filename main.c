@@ -31,10 +31,11 @@ int main(int argc, char **argv)
     else
     {
         re = parsing(argc,argv);
-        init(a, re);
+        init(&a, re);
+        
         if(!isEmpty(a))
         {
-            printf("Elements of the stack after pushing:\n");
+            ft_printf("Elements of the stack after pushing:\n");
             struct stack_node *current = a->top;
             while (current != NULL) 
             {
@@ -43,7 +44,7 @@ int main(int argc, char **argv)
             }
         }
         else
-            printf("Stack is empty or not initialized properly\n");
+            ft_printf("Stack is empty or not initialized properly\n");
     }
     return(0);
     //./push_swap "13 89 89"

@@ -1,50 +1,71 @@
 #include "push_swap.h"
 
-int check_inputs(int argc, char **argv) 
-{
-    int i; 
-	int j;
+// int check_inputs(int argc, char **argv) 
+// {
+//     int i; 
+// 	int j;
 
-	i = 1;
-    while (i < argc) 
-	{
+// 	i = 1;
+//     while (i < argc) 
+// 	{
+//         j = 0;
+//         while (argv[i][j]) 
+// 		{
+//             if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
+//                 return(1);
+//             j++;
+//         }
+// 		i++;
+//     }
+// 	i = 1 ;
+// 	while (i < argc)
+// 	{
+// 		j = 0;
+// 		while(argv[i][j])
+// 		{
+// 			if(argv[i][j] == '-' && argv[i][j+1] == '-')
+// 				return (1);
+// 			else if (argv[i][j] == '-' && argv[i][j + 1] == '+')
+// 				return (1);
+// 			else if (argv[i][j] == '+' && argv[i][j + 1] == '+')
+// 				return (1);
+// 			else if (argv[i][j] == '+' && argv[i][j + 1] == '-')
+// 				return (1);
+// 			else if (argv[i][j] == '+' && argv[i][j + 1] == '\0')
+// 				return (1);
+// 			else if (argv[i][j] == '-' && argv[i][j + 1] == '\0')
+// 				return (1);
+// 			else if (argv[i][j] == '+' && argv[i][j + 1] == ' ')
+// 				return (1);
+// 			else if (argv[i][j] == '-' && argv[i][j + 1] == ' ')
+// 				return (1);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (0);
+// }
+#include <ctype.h> // for isdigit
+
+int check_inputs(int argc, char **argv) {
+    int i, j;
+
+    for (i = 1; i < argc; i++) {
         j = 0;
-        while (argv[i][j]) 
-		{
-            if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
-                return(1);
+        while (argv[i][j]) {
+            // Check if the character is not a digit, space, '+' or '-'
+            if (!isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
+                return 1;
+
+            // Check for invalid sequences of '+' and '-' signs
+            if ((argv[i][j] == '+' || argv[i][j] == '-') && (argv[i][j + 1] == '+' || argv[i][j + 1] == '-' || argv[i][j + 1] == '\0' || argv[i][j + 1] == ' '))
+                return 1;
             j++;
         }
-		i++;
     }
-	i = 1 ;
-	while (i < argc)
-	{
-		j = 0;
-		while(argv[i][j])
-		{
-			if(argv[i][j] == '-' && argv[i][j+1] == '-')
-				return (1);
-			else if (argv[i][j] == '-' && argv[i][j + 1] == '+')
-				return (1);
-			else if (argv[i][j] == '+' && argv[i][j + 1] == '+')
-				return (1);
-			else if (argv[i][j] == '+' && argv[i][j + 1] == '-')
-				return (1);
-			else if (argv[i][j] == '+' && argv[i][j + 1] == '\0')
-				return (1);
-			else if (argv[i][j] == '-' && argv[i][j + 1] == '\0')
-				return (1);
-			else if (argv[i][j] == '+' && argv[i][j + 1] == ' ')
-				return (1);
-			else if (argv[i][j] == '-' && argv[i][j + 1] == ' ')
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+    return 0;
 }
+
 
 char **split_args(int argc, char **argv) 
 {
