@@ -12,4 +12,4 @@
 //rrb reverse rotate b
 //rrr reverse rotate both of them at the same time
 
-void sa(st)
+
