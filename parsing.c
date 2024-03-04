@@ -43,7 +43,9 @@ char	**split_args(int argc, char **argv)
     size_t	total_length;
 
     if (argc < 2 || argv == NULL)
+	{
         return (NULL);
+	}
 	arg = NULL;
 	splitted = NULL;
 	total_length = 0;

@@ -17,11 +17,9 @@ int main(int argc, char **argv)
     //wait where is my stack
     //
 	stack_i *a;
-	stack_i *b;
     array_s *re;
 
     a = NULL;
-    b = NULL;
     re = NULL;
     if (argc <= 1 || (argc == 2 && argv[1][0] == '\0'))
     {
