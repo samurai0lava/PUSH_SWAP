@@ -1,20 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/04 16:54:26 by iouhssei          #+#    #+#             */
+/*   Updated: 2024/03/04 16:54:29 by iouhssei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-stack_i *createStack() {
-    stack_i* stack = (stack_i*)malloc(sizeof(stack_i));
-    if (!stack) 
-        return NULL;
-    stack->top = NULL;
-    return stack;
-}
-
-
-int isEmpty(struct stack_node* stack) 
+stack_i *createStack() 
 {
-    return((stack -> top) == NULL); 
+    stack_i* stack; 
+    
+    stack = (stack_i*)malloc(sizeof(stack_i));
+    if (!stack) 
+        return (NULL);
+    stack->top = NULL;
+    return (stack);
 }
 
-void push(struct stack_node* stack, int data) 
+int isEmpty(struct stack_node* stack)
+{
+    return((stack -> top) == NULL);
+}
+
+void    push(struct stack_node* stack, int data) 
 {
     struct stack_node* newNode;
     
@@ -29,21 +43,21 @@ void push(struct stack_node* stack, int data)
     stack->top = newNode;
 }
 
-int pop(struct stack_node* stack) 
-{
-    if (isEmpty(stack)) 
-        return(1);
-    struct  stack_node* temp;
-    int     data;
+// int pop(struct stack_node* stack) 
+// {
+//     if (isEmpty(stack)) 
+//         return(1);
+//     struct  stack_node* temp;
+//     int     data;
 
-    temp = stack->top;
-    data = temp->data;
-    stack->top = temp->next;
-    if (stack->top != NULL) 
-        stack->top->prev = NULL;
-    free(temp);
-    return data;
-}
+//     temp = stack->top;
+//     data = temp->data;
+//     stack->top = temp->next;
+//     if (stack->top != NULL) 
+//         stack->top->prev = NULL;
+//     free(temp);
+//     return data;
+// }
 
 
 // int main(int argc, char **argv)
