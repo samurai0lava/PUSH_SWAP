@@ -35,5 +35,6 @@ stack_i *createStack();
 int     isEmpty(struct stack_node* stack);
 void    push(struct stack_node* stack, int data);
 int     size_sp(char **splited);
-
+int     stack_len(stack_i *stack);
+void    sort_3(stack_i **a);
 #endif
