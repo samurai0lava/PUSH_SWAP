@@ -18,10 +18,7 @@ void reverseRotate(stack_i **head)
     stack_i *newLast;
 
 	if (isEmpty(head)) 
-	{
-        printf("Not enough elements to reverse rotate!\n");
         return;
-    }
     temp = *head;
     while (temp->next->next != NULL) 
 	{
@@ -32,6 +29,46 @@ void reverseRotate(stack_i **head)
     (*head)->prev = newLast;
     temp->next = NULL;
     newLast->prev = NULL;
+    *head = newLast;
+}
+
+void rotate(stack_i **head) 
+{
+    stack_i *temp;
+    stack_i *newLast;
+
+    if (isEmpty(head)) 
+    {
+        printf("Not enough elements to rotate!\n");
+        return;
+    }
+    temp = *head;
+    while (temp->next != NULL) 
+    {
+        temp = temp->next;
+    }
+    newLast = *head;
+    temp->next = newLast;
+    newLast->prev = temp;
+    *head = (*head)->next;
+    (*head)->prev = NULL;
+}
+void swap(stack_i **head) 
+{
+    stack_i *temp;
+    stack_i *newLast;
+
+    if (isEmpty(head)) 
+    {
+        printf("Not enough elements to swap!\n");
+        return;
+    }
+    temp = *head;
+    newLast = temp->next;
+    temp->next = newLast->next;
+    newLast->next = temp;
+    newLast->prev = NULL;
+    temp->prev = newLast;
     *head = newLast;
 }
 
