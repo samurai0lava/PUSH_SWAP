@@ -38,10 +38,7 @@ void rotate(stack_i **head)
     stack_i *newLast;
 
     if (isEmpty(head)) 
-    {
-        printf("Not enough elements to rotate!\n");
         return;
-    }
     temp = *head;
     while (temp->next != NULL) 
     {
@@ -59,10 +56,7 @@ void swap(stack_i **head)
     stack_i *newLast;
 
     if (isEmpty(head)) 
-    {
-        printf("Not enough elements to swap!\n");
         return;
-    }
     temp = *head;
     newLast = temp->next;
     temp->next = newLast->next;
