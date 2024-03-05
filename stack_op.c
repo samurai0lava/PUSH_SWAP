@@ -12,4 +12,35 @@
 //rrb reverse rotate b
 //rrr reverse rotate both of them at the same time
 
+void reverseRotate(stack_i **head) 
+{
+	stack_i *temp;
+    stack_i *newLast;
 
+	if (isEmpty(head)) 
+	{
+        printf("Not enough elements to reverse rotate!\n");
+        return;
+    }
+    temp = *head;
+    while (temp->next->next != NULL) 
+	{
+        temp = temp->next;
+    }
+    newLast = temp->next;
+    newLast->next = *head;
+    (*head)->prev = newLast;
+    temp->next = NULL;
+    newLast->prev = NULL;
+    *head = newLast;
+}
+
+void printStack(stack_i **head) 
+{
+    stack_i* temp = *head;
+    while (temp != NULL) {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}

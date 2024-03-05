@@ -23,7 +23,7 @@ $(LIB):
 	@$(MAKE) -C libft
 
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)MAKING libft....................."
+	@echo "$(YELLOW)..MAKING libft....................."
 	@sleep 1
 	@echo "Compiling PUSH_SWAP................$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
