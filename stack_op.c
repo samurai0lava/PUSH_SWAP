@@ -12,7 +12,7 @@
 //rrb reverse rotate b
 //rrr reverse rotate both of them at the same time
 
-void reverseRotate(stack_i **head) 
+void reverseRotate(stack_i **head, char *str) 
 {
 	stack_i *temp;
     stack_i *newLast;
@@ -30,9 +30,10 @@ void reverseRotate(stack_i **head)
     temp->next = NULL;
     newLast->prev = NULL;
     *head = newLast;
+    ft_putendl_fd(str, 1);
 }
 
-void rotate(stack_i **head) 
+void rotate(stack_i **head, char *str) 
 {
     stack_i *temp;
     stack_i *newLast;
@@ -49,8 +50,9 @@ void rotate(stack_i **head)
     newLast->prev = temp;
     *head = (*head)->next;
     (*head)->prev = NULL;
+    ft_putendl_fd(str, 1);
 }
-void swap(stack_i **head) 
+void swap(stack_i **head, char *str) 
 {
     stack_i *temp;
     stack_i *newLast;
@@ -64,14 +66,15 @@ void swap(stack_i **head)
     newLast->prev = NULL;
     temp->prev = newLast;
     *head = newLast;
+    ft_putendl_fd(str, 1);
 }
 
-void printStack(stack_i **head) 
-{
-    stack_i* temp = *head;
-    while (temp != NULL) {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
-}
+// void printStack(stack_i **head) 
+// {
+//     stack_i* temp = *head;
+//     while (temp != NULL) {
+//         printf("%d ", temp->data);
+//         temp = temp->next;
+//     }
+//     printf("\n");
+// }

@@ -32,9 +32,16 @@ char	**split_args(int argc, char **argv);
 int		*atoi_ad(char **splitted);
 void    init(stack_i **a, array_s *re);
 stack_i *createStack();
-int     isEmpty(struct stack_node* stack);
-void    push(struct stack_node* stack, int data);
+int     isEmpty(stack_i* stack)
+void    push(stack_i* stack, int data);
 int     size_sp(char **splited);
 int     stack_len(stack_i *stack);
 void    sort_3(stack_i **a);
+void    reverseRotate(stack_i **head, char *str);
+void    rotate(stack_i **head, char *str);
+void    swap(stack_i **head, char *str);
+// void    printStack(stack_i **head);
+void    push_swap(stack_i **a, stack_i **b);
+int     is_it_sorted (stack_i *a)
+void    sort_5(stack_i **a, stack_i **b);
 #endif

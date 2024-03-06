@@ -10,21 +10,21 @@ void sort_3(stack_i **a)
     second = (*a)->next->data;
     third = (*a)->next->next->data;
     if (first > second && second < third && first < third)
-        swap(a);
+        swap(a, "sa");
     else if (first > second && second > third && first > third)
     {
-        swap(a);
-        reverse_rotate(a);
+        swap(a, "sa");
+        reverse_rotate(a), "rra";
     }
     else if (first > second && second < third && first > third)
-        rotate(a);
+        rotate(a, "ra");
     else if (first < second && second > third && first < third)
     {
-        swap(a);
-        rotate(a);
+        swap(a, "sa");
+        rotate(a, "ra");
     }
     else if (first < second && second > third && first > third)
-        reverse_rotate(a);
+        reverse_rotate(a, "rra");
     else
         return;
 }

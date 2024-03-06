@@ -23,12 +23,12 @@ stack_i *createStack()
     return (stack);
 }
 
-int isEmpty(struct stack_node* stack)
+int isEmpty(stack_i* stack)
 {
     return((stack -> top) == NULL);
 }
 
-void    push(struct stack_node* stack, int data) 
+void    push(stack_i* stack, int data) 
 {
     struct stack_node* newNode;
     
