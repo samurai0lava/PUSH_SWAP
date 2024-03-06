@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     //
 	stack_i *a;
     array_s *re;
-
+    stack_i *b;
     a = NULL;
     re = NULL;
     if (argc <= 1 || (argc == 2 && argv[1][0] == '\0'))
@@ -30,6 +30,7 @@ int main(int argc, char **argv)
     {
         re = parsing(argc,argv);
         init(&a, re);
+
         
         if(!isEmpty(a))
         {

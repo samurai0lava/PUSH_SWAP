@@ -23,12 +23,15 @@ void sort_5(stack_i **a, stack_i **b)
 
     i = 0;
     size = stack_size(*a);
-    while (i < 2)
+    while (i < 2 && size > 3)
     {
         min = find_min(*a);
         if ((*a)->data == min)
-            push(b, a);
-        else
+        {
+            push(*b, (*a)->data);
+            ft_putendl_fd("pb", 1);
+        }
+        else 
             rotate(a, "ra");
         i++;
     }
