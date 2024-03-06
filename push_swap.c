@@ -22,9 +22,9 @@ void push_swap(stack_i **a, stack_i **b)
 
     while(!is_it_sorted(*a))
     {
-        size = stack_size(*a);
+        size = stack_len(*a);
         if (size == 2)
-            swap(a);
+            swap(a, "sa");
         else if (size >= 3 && size <= 5)
             sort_5(a, b);
     }
