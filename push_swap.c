@@ -19,11 +19,12 @@ int is_it_sorted (stack_i *a)
 void push_swap(stack_i **a, stack_i **b)
 {
     int size;
-
-    //while(is_it_sorted(*a) == 0)
-    //{
-        size = stack_len(*a);
-        printf("size = %d\n", size);
+    size = stack_len(*a);
+    printf("size = %d\n", size);
+    while(is_it_sorted(*a) == 0)
+    {
+        
+        
         if (size == 2)
             swap(a, "sa");
         else if (size == 3)
@@ -32,5 +33,5 @@ void push_swap(stack_i **a, stack_i **b)
             sort_5(a ,b);
         else
             ft_printf("mzl massybna dakshi lakher shtt");
-    //}
+    }
 }

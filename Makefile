@@ -28,10 +28,8 @@ $(LIB):
 
 $(NAME): $(OBJ)
 	@echo "$(YELLOW)..MAKING libft....................."
-	@sleep 1
 	@echo "Compiling PUSH_SWAP................$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
-	@sleep 2
 	@echo "$(GREEN)DONE............................$(RESET)"
 
 %.o: %.c
@@ -39,7 +37,6 @@ $(NAME): $(OBJ)
 
 clean:
 	@echo "$(RED)Deleting objects..................."
-	@sleep 2
 	@echo "Cleaning......................$(RESET)"
 	@$(MAKE) -C libft clean
 	@rm -f $(OBJ)

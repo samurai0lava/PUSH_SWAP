@@ -44,19 +44,20 @@ void    push(stack_i* stack, int data)
 }
 
 int stack_len(stack_i *stack)
-{
-    int len;
-    stack_i *temp;
-
-    len = 0;
-    temp = stack;
-    while (temp)
-    {
+{    
+    if(isEmpty(stack))
+        return 0;
+    int len = 0;
+    stack_i *temp = stack;
+    
+    while (temp != NULL) {
         len++;
         temp = temp->next;
     }
-    return (len);
+    
+    return len;
 }
+
 // int pop(struct stack_node* stack) 
 // {
 //     if (isEmpty(stack)) 
