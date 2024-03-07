@@ -68,13 +68,3 @@ void swap(stack_i **head, char *str)
     *head = newLast;
     ft_putendl_fd(str, 1);
 }
-
-void printStack(stack_i **head) 
-{
-    stack_i* temp = *head;
-    while (temp != NULL) {
-        printf("%d\n", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
-}

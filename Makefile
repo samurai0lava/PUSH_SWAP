@@ -1,7 +1,7 @@
 NAME = push_swap
 LIB = libft/libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 SRC = stack_init.c\
     utils.c\

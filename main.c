@@ -31,14 +31,16 @@ int main(int argc, char **argv)
         re = parsing(argc,argv);
         init(&a, re);
 
-        
         if(!isEmpty(a))
         {
-            ft_printf("Elements of the stack after pushing: (not sorted)\n");
-            printStack(&a);  
             push_swap(&a, &b);
             ft_printf("Elements of the stack after pushing: (sorted)\n");
-            printStack(&a);        
+            struct stack_node* current = a->top;
+            while (current != NULL) 
+            {
+                printf("%d\n", current->data);
+                current = current->next;
+            }       
         }
         else
             ft_putendl_fd("Stack is empty or not initialized properly", 2);
