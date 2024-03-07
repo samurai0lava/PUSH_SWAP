@@ -19,10 +19,12 @@ int main(int argc, char **argv)
         re = parsing(argc,argv);
         init(&a, re);
         size = re->size;
-        // printf("%d\n", size);
+        
+        
         if(!isEmpty(a))
         {
             push_swap(&a, &b, size);
+            printf("%d\n", size);
             //ft_printf("Elements of the stack after pushing: (sorted)\n");
             // struct stack_node* current = a->top;
             // while (current != NULL) 
