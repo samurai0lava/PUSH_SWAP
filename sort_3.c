@@ -14,7 +14,7 @@ void sort_3(stack_i **a)
     else if (first > second && second > third && first > third)
     {
         swap(a, "sa");
-        reverse_rotate(a), "rra";
+        reverseRotate(a, "rra");
     }
     else if (first > second && second < third && first > third)
         rotate(a, "ra");
@@ -24,7 +24,7 @@ void sort_3(stack_i **a)
         rotate(a, "ra");
     }
     else if (first < second && second > third && first > third)
-        reverse_rotate(a, "rra");
+        reverseRotate(a, "rra");
     else
         return;
 }

@@ -28,6 +28,8 @@ void push_swap(stack_i **a, stack_i **b)
         else if (size == 3)
             sort_3(a);
         else if(size > 3 && size <= 5)
-            sort_5(a ,b);   
+            sort_5(a ,b);
+        else
+            ft_printf("mzl massybna dakshi lakher shtt");
     }
 }

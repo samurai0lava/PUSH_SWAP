@@ -34,16 +34,14 @@ int main(int argc, char **argv)
         
         if(!isEmpty(a))
         {
-            ft_printf("Elements of the stack after pushing:\n");
-            struct stack_node *current = a->top;
-            while (current != NULL) 
-            {
-                ft_printf("%d\n", current->data);
-                current = current->next;
-            }
+            ft_printf("Elements of the stack after pushing: (not sorted)\n");
+            printStack(&a);  
+            push_swap(&a, &b);
+            ft_printf("Elements of the stack after pushing: (sorted)\n");
+            printStack(&a);        
         }
         else
-            ft_printf("Stack is empty or not initialized properly\n");
+            ft_putendl_fd("Stack is empty or not initialized properly", 2);
     }
     return(0);
     //./push_swap "13 89 89"

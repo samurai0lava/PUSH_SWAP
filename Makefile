@@ -7,8 +7,12 @@ SRC = stack_init.c\
     utils.c\
     parsing.c\
     parsing2.c\
-    main.c
-
+    main.c\
+	stack_op.c\
+	sort_5.c\
+	sort_3.c\
+	push_swap.c
+	
 OBJ = $(SRC:.c=.o)
 
 # ANSI color codes

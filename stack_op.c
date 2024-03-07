@@ -17,8 +17,8 @@ void reverseRotate(stack_i **head, char *str)
 	stack_i *temp;
     stack_i *newLast;
 
-	if (isEmpty(head)) 
-        return;
+	// if (isEmpty(head)) 
+    //     return;
     temp = *head;
     while (temp->next->next != NULL) 
 	{
@@ -38,8 +38,8 @@ void rotate(stack_i **head, char *str)
     stack_i *temp;
     stack_i *newLast;
 
-    if (isEmpty(head)) 
-        return;
+    // if (isEmpty(head)) 
+    //     return;
     temp = *head;
     while (temp->next != NULL) 
     {
@@ -57,8 +57,8 @@ void swap(stack_i **head, char *str)
     stack_i *temp;
     stack_i *newLast;
 
-    if (isEmpty(head)) 
-        return;
+    // if (isEmpty(head)) 
+    //     return;
     temp = *head;
     newLast = temp->next;
     temp->next = newLast->next;
@@ -69,12 +69,12 @@ void swap(stack_i **head, char *str)
     ft_putendl_fd(str, 1);
 }
 
-// void printStack(stack_i **head) 
-// {
-//     stack_i* temp = *head;
-//     while (temp != NULL) {
-//         printf("%d ", temp->data);
-//         temp = temp->next;
-//     }
-//     printf("\n");
-// }
+void printStack(stack_i **head) 
+{
+    stack_i* temp = *head;
+    while (temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
