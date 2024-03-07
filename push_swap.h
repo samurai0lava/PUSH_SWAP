@@ -40,8 +40,8 @@ void    sort_3(stack_i **a);
 void    reverseRotate(stack_i **head, char *str); 
 void    rotate(stack_i **head, char *str);
 void    swap(stack_i **head, char *str);
-void    printStack(stack_i **head);
-void    push_swap(stack_i **a, stack_i **b);
+void    print_stack(stack_i *stack);
+void    push_swap(stack_i **a, stack_i **b, int size);
 int     is_it_sorted (stack_i *a);
-void    sort_5(stack_i **a, stack_i **b);
+void    sort_5(stack_i **a, stack_i **b, int size);
 #endif

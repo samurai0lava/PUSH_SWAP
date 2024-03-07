@@ -3,12 +3,28 @@
 
 #include "push_swap.h"
 
-int is_it_sorted (stack_i *a)
+void push_swap(stack_i **a, stack_i **b, int size)
 {
-    stack_i *tmp;
 
+    while(is_it_sorted(*a) == 1)
+    {
+        if (size == 2)
+            swap(a, "sa");
+        else if (size == 3)
+            sort_3(a);
+        else if(size > 3 && size <= 5)
+            sort_5(a ,b, size);
+        else
+            ft_printf("mzl massybna dakshi lakher shtt");
+    }
+}
+
+int is_it_sorted(stack_i *a) 
+{
+    stack_i *tmp 
+    
     tmp = a;
-    while (tmp->next)
+    while (tmp->next) 
     {
         if (tmp->data > tmp->next->data)
             return (0);
@@ -16,22 +32,16 @@ int is_it_sorted (stack_i *a)
     }
     return (1);
 }
-void push_swap(stack_i **a, stack_i **b)
+void print_stack(stack_i *stack) 
 {
-    int size;
-    size = stack_len(*a);
-    printf("size = %d\n", size);
-    while(is_it_sorted(*a) == 0)
+    stack_i *current 
+    
+    current = stack;
+    while (current != NULL) 
     {
-        
-        
-        if (size == 2)
-            swap(a, "sa");
-        else if (size == 3)
-            sort_3(a);
-        else if(size > 3 && size <= 5)
-            sort_5(a ,b);
-        else
-            ft_printf("mzl massybna dakshi lakher shtt");
+        printf("%d ", current->data);
+        current = current->next;
     }
+    printf("\n");
 }
+

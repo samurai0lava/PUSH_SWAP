@@ -14,14 +14,12 @@ static int find_min(stack_i *a)
     return (min);
 }
 
-void sort_5(stack_i **a, stack_i **b)
+void sort_5(stack_i **a, stack_i **b, int size)
 {
     int i;
     int min;
-    int size;
 
     i = 0;
-    size = stack_len(*a);
     while (i < 2 && size > 3)
     {
         min = find_min(*a);
