@@ -46,8 +46,7 @@ array_s *parsing(int argc, char **argv)
     re = (array_s *)malloc(sizeof(array_s));
     if (re == NULL) 
     {
-        fprintf(stderr, "Error: Memory allocation failed\n");
-        return NULL;
+        error_quit("Error: Memory allocation failed\n");
     }    
     if (argc < 2 || argv == NULL) 
     {
