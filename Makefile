@@ -3,15 +3,15 @@ LIB = libft/libft.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g
 
-SRC = stack_init.c\
-    utils.c\
-    parsing.c\
-    parsing2.c\
-    main.c\
-	stack_op.c\
-	sort_5.c\
-	sort_3.c\
-	push_swap.c
+SRC = parsing/stack_init.c\
+    utils/utils.c\
+    parsing/parsing.c\
+    parsing/parsing2.c\
+    utils/main.c\
+	utils/stack_op.c\
+	sorting/sort_5.c\
+	sorting/sort_3.c\
+	sorting/push_swap.c
 	
 OBJ = $(SRC:.c=.o)
 

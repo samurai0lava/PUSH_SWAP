@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 //sa Swap the first 2 elements at the top of stack a.
 //sb ... same

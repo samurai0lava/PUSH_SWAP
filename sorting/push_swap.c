@@ -1,37 +1,42 @@
 //algo that will do it all
 //MNIN ANBDAHAA
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void push_swap(stack_i **a, stack_i **b, int size)
-{
-    while (is_it_sorted(*a)) {
-        printf("Stack is sorted\n");
+{   
+    while (is_it_sorted(*a)) 
+    {   
         if (size == 2)
             swap(a, "sa");
-        
         else if (size == 3)
             sort_3(a);
         else if (size > 3 && size <= 5)
             sort_5(a, b, size);
-        else {
+        else 
+        {
             ft_printf("Array too large for this implementation.\n");
-            break;
+            return ;
         }
-        // Update size of stack a after each sorting operation
     }
 }
 
 
-int is_it_sorted(stack_i *a) {
-    stack_i *tmp = a;
+int is_it_sorted(stack_i *a) 
+{
+    if (a == NULL || a->next == NULL)
+        return (1);
 
-    while (tmp->next) {
+    stack_i *tmp; 
+    
+    tmp = a;
+    while (tmp->next)
+    {
         if (tmp->data > tmp->next->data)
-            return 0;
+            return (0);
         tmp = tmp->next;
     }
-    return 1;
+    return (1);
 }
 
 void print_stack(stack_i *stack) 
