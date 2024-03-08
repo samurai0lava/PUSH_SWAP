@@ -7,6 +7,7 @@ int main(int argc, char **argv)
     stack_i *b;
     int size;
 
+    b = NULL;
     a = NULL;
     re = NULL;
     if (argc <= 1 || (argc == 2 && argv[1][0] == '\0'))
@@ -19,8 +20,6 @@ int main(int argc, char **argv)
         re = parsing(argc,argv);
         init(&a, re);
         size = re->size;
-        
-        
         if(!isEmpty(a))
         {
             push_swap(&a, &b, size);
