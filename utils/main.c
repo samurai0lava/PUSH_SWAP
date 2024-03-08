@@ -24,14 +24,14 @@ int main(int argc, char **argv)
         if(!isEmpty(a))
         {
             push_swap(&a, &b, size);
-            printf("%d\n", size);
-            //ft_printf("Elements of the stack after pushing: (sorted)\n");
-            // struct stack_node* current = a->top;
-            // while (current != NULL) 
-            // {
-            //     printf("%d\n", current->data);
-            //     current = current->next;
-            // }       
+            // printf("%d\n", size);
+            ft_printf("Elements of the stack after pushing: (sorted)\n");
+            struct stack_node* current = a->top;
+            while (current != NULL) 
+            {
+                printf("%d\n", current->data);
+                current = current->next;
+            }       
         }
         else
             ft_putendl_fd("Stack is empty or not initialized properly", 2);

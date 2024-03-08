@@ -3,24 +3,51 @@
 
 #include "../push_swap.h"
 
+// void push_swap(stack_i **a, stack_i **b, int size)
+// {   
+//     while (is_it_sorted(*a)) 
+//     {   
+//         if (size == 1)
+//             return ;
+//         else if (size == 2) 
+//             swap(a, "sa");
+//         else if (size == 3)
+//             sort_3(a);
+//         else if (size > 3 && size <= 5)
+//             sort_5(a, b, size);
+//         else
+//         {
+//             ft_printf("Array too large for this implementation.\n");
+//             return ;
+//         }
+//     }
+//     return ;
+// }
+
 void push_swap(stack_i **a, stack_i **b, int size)
-{   
-    while (is_it_sorted(*a)) 
+{
+    if(isEmpty(*a))
     {   
-        if (size == 2)
-            swap(a, "sa");
-        else if (size == 3)
-            sort_3(a);
-        else if (size > 3 && size <= 5)
-            sort_5(a, b, size);
-        else 
-        {
-            ft_printf("Array too large for this implementation.\n");
-            return ;
-        }
+        ft_putendl_fd("stack is Empty : <usage>", 2);
+        return ;
+    }
+    if(is_it_sorted(*a) == 0 || size == 1)
+    {
+        ft_printf("stack already sorted\n");
+        return ;
+    }
+    else if (size == 2) 
+        swap(a, "sa");
+    else if (size == 3)
+        sort_3(a);
+    else if (size > 3 && size <= 5)
+        sort_5(a, b, size);
+    else
+    {
+        ft_printf("Array too large for this implementation.\n");
+        return ;
     }
 }
-
 
 int is_it_sorted(stack_i *a) 
 {
