@@ -72,7 +72,7 @@ array_s *parsing(int argc, char **argv)
         error_quit("Error : Duplicate");
         free(re->array);
         free(re);
-        return NULL;
+        return (NULL);
     }
     return re;
 }

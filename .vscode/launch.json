@@ -6,11 +6,13 @@
             "name": "C Debug",
             "type": "cppdbg",
             "request": "launch",
+            "stopAtEntry": false,
             "program": "${workspaceFolder}/push_swap",
-            "args": ["1", "3", "2"],
+            "args": ["1", "3", "3"],
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
+            "miDebuggerPath": "/usr/bin/gdb",
             "MIMode": "gdb",
         }
     ]

@@ -18,6 +18,8 @@ int main(int argc, char **argv)
     else
     {
         re = parsing(argc,argv);
+        if(re == NULL)
+            return (1);
         init(&a, re);
         size = re->size;
         if(!isEmpty(a))
