@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-stack_i *createStack() 
+stack_i *createStack(int content) 
 {
     stack_i* stack; 
     
@@ -20,6 +20,7 @@ stack_i *createStack()
     if (!stack) 
         return (NULL);
     stack->top = NULL;
+    stack->data = content;
     return (stack);
 }
 
@@ -30,7 +31,7 @@ int isEmpty(stack_i* stack)
 
 void    push(stack_i* stack, int data) 
 {
-    struct stack_node* newNode;
+    stack_i* newNode;
     
     newNode = (struct stack_node*)malloc(sizeof(struct stack_node));
     if (!newNode)

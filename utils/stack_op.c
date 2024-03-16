@@ -1,17 +1,5 @@
 #include "../push_swap.h"
 
-//sa Swap the first 2 elements at the top of stack a.
-//sb ... same
-//ss both of them at the same time
-//pa Take the first element at the top of b and put it at the top of a.
-//pb ... same
-//ra top of the satck a go to the bottom of the stack
-//rb same as a..
-//rr rotate the both of them
-//rra reverse rotate a
-//rrb reverse rotate b
-//rrr reverse rotate both of them at the same time
-
 void reverseRotate(stack_i **head, char *str) 
 {
 	stack_i *temp;
@@ -52,19 +40,38 @@ void rotate(stack_i **head, char *str)
     (*head)->prev = NULL;
     ft_printf(str);
 }
-void swap(stack_i **head, char *str) 
-{
-    stack_i *temp;
-    stack_i *newLast;
 
-    if (isEmpty(*head)) 
+// void	swap(stack_i **head, char *str)
+// {
+// 	if (NULL == *head || NULL == (*head)->next)
+// 		return ;
+// 	*head = (*head)->next;
+// 	(*head)->prev->prev = *head;
+// 	(*head)->prev->next = (*head)->next;
+// 	if ((*head)->next)
+// 		(*head)->next->prev = (*head)->prev;
+// 	(*head)->next = (*head)->prev;
+// 	(*head)->prev = NULL;
+//     ft_printf(str);
+// }
+void swap(stack_i **head, char *str)
+{
+    if (*head == NULL || (*head)->next == NULL)
+    {
+        printf("Cannot swap: stack is empty or has only one element.\n");
         return;
-    temp = *head;
-    newLast = temp->next;
-    temp->next = newLast->next;
-    newLast->next = temp;
-    newLast->prev = NULL;
-    temp->prev = newLast;
-    *head = newLast;
-    ft_printf(str);
+    }
+
+    stack_i *first = *head;
+    stack_i *second = first->next;
+
+    first->next = second->next;
+    first->prev = second;
+    if (second->next != NULL)
+        second->next->prev = first;
+    second->next = first;
+    second->prev = NULL;
+
+    *head = second;
+    ft_printf(str); 
 }
