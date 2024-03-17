@@ -30,21 +30,6 @@ int isEmpty(stack_i* stack)
     return((stack -> top) == NULL);
 }
 
-void    push(stack_i* stack, int data) 
-{
-    stack_i* newNode;
-    
-    newNode = (struct stack_node*)malloc(sizeof(struct stack_node));
-    if (!newNode)
-        return;
-    newNode->data = data;
-    newNode->next = stack->top;
-    newNode->prev = NULL;
-    if (stack->top != NULL) 
-        stack->top->prev = newNode;
-    stack->top = newNode;
-}
-
 int stack_len(stack_i *stack)
 {    
     if(isEmpty(stack))
@@ -60,49 +45,28 @@ int stack_len(stack_i *stack)
     return len;
 }
 
-// int pop(struct stack_node* stack) 
-// {
-//     if (isEmpty(stack)) 
-//         return(1);
-//     struct  stack_node* temp;
-//     int     data;
+int	stack_sorted(stack_i *stack)
+{
+	if (NULL == stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
 
-//     temp = stack->top;
-//     data = temp->data;
-//     stack->top = temp->next;
-//     if (stack->top != NULL) 
-//         stack->top->prev = NULL;
-//     free(temp);
-//     return data;
-// }
-
-
-// int main(int argc, char **argv)
-// {
-//     int     i; 
-//     stack_i *stack;
-
-//     if (argc < 2) 
-//     {
-//         ft_printf("dumb ass bitch");
-//         return 1;
-//     }
-//     if(argc == 2)
-//     {   
-//     }
-//     i = 1;
-//     stack = createStack();
-//     while(argv[i])
-//     {
-//         push(stack, atoi(argv[i]));
-//         i++;
-//     }
-//     printf("Elements of the stack after pushing:\n");
-//     struct stack_node* current = stack->top;
-//     while (current != NULL) 
-//     {
-//         printf("%d\n", current->data);
-//         current = current->next;
-//     }
-//     return 0;
-// }
+void print_stack(stack_i *stack) 
+{
+    stack_i *current ;
+    
+    current = stack;
+    while (current != NULL) 
+    {
+        printf("%d ", current->data);
+        current = current->next;
+    }
+    printf("\n");
+}

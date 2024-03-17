@@ -29,7 +29,7 @@ $(LIB):
 $(NAME): $(OBJ)
 	@echo "$(YELLOW)..MAKING libft....................."
 	@echo "Compiling PUSH_SWAP................$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
+	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
 	@echo "$(GREEN)DONE............................$(RESET)"
 
 %.o: %.c

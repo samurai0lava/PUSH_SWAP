@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
 int	check_inputs(int argc, char **argv)
 {
 	int	i;

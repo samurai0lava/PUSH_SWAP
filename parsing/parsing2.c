@@ -46,7 +46,7 @@ array_s *parsing(int argc, char **argv)
     re = (array_s *)malloc(sizeof(array_s));
     if (re == NULL) 
     {
-        error_quit("Error: Memory allocation failed\n");
+        error_quit("Error");
     }    
     if (argc < 2 || argv == NULL) 
     {
@@ -55,7 +55,7 @@ array_s *parsing(int argc, char **argv)
     }
     if (check_inputs(argc, argv) == 1) 
     {
-        error_quit("Invalid set of arguments: <usage>");
+        error_quit("Error");
         free(re);
         return NULL;
     }
@@ -69,7 +69,7 @@ array_s *parsing(int argc, char **argv)
     re->size = size_sp(splitted);
     if (check_duplicate(re->array, re->size) == 1) 
     {
-        error_quit("Error : Duplicate");
+        error_quit("Error");
         free(re->array);
         free(re);
         return (NULL);

@@ -41,19 +41,6 @@ void rotate(stack_i **head, char *str)
     ft_printf(str);
 }
 
-// void	swap(stack_i **head, char *str)
-// {
-// 	if (NULL == *head || NULL == (*head)->next)
-// 		return ;
-// 	*head = (*head)->next;
-// 	(*head)->prev->prev = *head;
-// 	(*head)->prev->next = (*head)->next;
-// 	if ((*head)->next)
-// 		(*head)->next->prev = (*head)->prev;
-// 	(*head)->next = (*head)->prev;
-// 	(*head)->prev = NULL;
-//     ft_printf(str);
-// }
 void swap(stack_i **head, char *str)
 {
     if (*head == NULL || (*head)->next == NULL)
@@ -74,4 +61,19 @@ void swap(stack_i **head, char *str)
 
     *head = second;
     ft_printf(str); 
+}
+
+void    push(stack_i* stack, int data) 
+{
+    stack_i* newNode;
+    
+    newNode = (struct stack_node*)malloc(sizeof(struct stack_node));
+    if (!newNode)
+        return;
+    newNode->data = data;
+    newNode->next = stack->top;
+    newNode->prev = NULL;
+    if (stack->top != NULL) 
+        stack->top->prev = newNode;
+    stack->top = newNode;
 }
