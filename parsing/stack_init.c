@@ -35,7 +35,6 @@ static void append_node(stack_i **stack, int nbr)
 
     node->next = NULL;
     node->data = nbr;
-
     if (*stack == NULL)
     {
         *stack = node;

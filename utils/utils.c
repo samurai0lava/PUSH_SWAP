@@ -19,6 +19,7 @@ stack_i *createStack(int content)
     stack = (stack_i*)malloc(sizeof(stack_i));
     if (!stack) 
         return (NULL);
+    stack->next = NULL;
     stack->top = NULL;
     stack->data = content;
     return (stack);
