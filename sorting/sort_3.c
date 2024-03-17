@@ -24,4 +24,12 @@ void sort_3(stack_i **a)
     } 
     else if (first < second && second > third && first > third)
         reverseRotate(a, "rra");
+    print_stack(*a);
+}
+
+void sort_3(stack_i **a)
+{
+    if (*a == NULL || (*a)->next == NULL || (*a)->next->next == NULL)
+        return; 
+    
 }
