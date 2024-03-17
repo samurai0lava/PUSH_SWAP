@@ -26,10 +26,3 @@ void sort_3(stack_i **a)
         reverseRotate(a, "rra");
     print_stack(*a);
 }
-
-void sort_3(stack_i **a)
-{
-    if (*a == NULL || (*a)->next == NULL || (*a)->next->next == NULL)
-        return; 
-    
-}
