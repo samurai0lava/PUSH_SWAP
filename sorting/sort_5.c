@@ -25,13 +25,13 @@ void sort_5(stack_i **a, stack_i **b, int size)
         min = find_min(*a);
         if ((*a)->data == min)
         {
-            push(*b, (*a)->data);
-            ft_putendl_fd("pb", 1);
+            ft_putendl_fd("pb\n", 1);
         }
         else 
-            rotate(a, "ra");
+            rotate(a, "ra\n");
         i++;
     }
+
     sort_3(a);
     push(*a, (*b)->data);
     push(*a, (*b)->data);
