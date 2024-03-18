@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-stack_i* find_max(stack_i* a)
+static stack_i* find_max(stack_i* a)
 {
     if (a == NULL)
         return NULL;
@@ -20,16 +20,25 @@ stack_i* find_max(stack_i* a)
 
     return (maxNode);
 }
-
+// static stack_i* first_node(stack_i* a, stack_i* last_node)
+// {
+//     if(a->next->next == last_node)
+//         return(a);
+//     return (NULL);
+    
+// }
 void sort_3(stack_i **a)
 {
     if (*a == NULL || (*a)->next == NULL || (*a)->next->next == NULL)
         return;
     stack_i *maxNode;
     stack_i *lastNode;
-
-    maxNode = find_max(*a);
+    // stack_i *first_node1;
+    
     lastNode = find_last_node(*a);
+    // first_node1 = first_node(*a, lastNode);
+    maxNode = find_max(*a);
+    
     if (maxNode->data == lastNode->data)                
         swap(a, "sa\n");
     else if(maxNode->data == (*a)->data)

@@ -26,7 +26,6 @@ void rotate(stack_i **head, char *str)
     stack_i *temp;
     stack_i *newLast;
 
-
     temp = *head;
     while (temp->next != NULL) 
     {
