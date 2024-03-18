@@ -1,30 +1,5 @@
 #include "../push_swap.h"
 
-// void sort_3(stack_i **a) 
-// {
-//     if (*a == NULL || (*a)->next == NULL || (*a)->next->next == NULL)
-//         return;
-//     int first = (*a)->data;
-//     int second = (*a)->next->data;
-//     int third = (*a)->next->next->data;
-    
-//     if (first > second && second < third && first < third)
-//         swap(a, "sa");
-//     else if (first > second && second > third && first > third)
-//     {
-//         swap(a, "sa");
-//         reverseRotate(a, "rra");
-//     } 
-//     else if (first > second && second < third && first > third)
-//         rotate(a, "ra");
-//     else if (first < second && second > third && first < third)
-//     {
-//         swap(a, "sa");
-//         rotate(a, "ra");
-//     } 
-//     else if (first < second && second > third && first > third)
-//         reverseRotate(a, "rra");
-// }
 stack_i* find_max(stack_i* a)
 {
     if (a == NULL)
@@ -56,17 +31,17 @@ void sort_3(stack_i **a)
     maxNode = find_max(*a);
     lastNode = find_last_node(*a);
     if (maxNode->data == lastNode->data)                
-        swap(a, "sa");
+        swap(a, "sa\n");
     else if(maxNode->data == (*a)->data)
     {
-        rotate(a, "ra");
+        rotate(a, "ra\n");
         if(!stack_sorted(*a))
-            swap(a, "sa");
+            swap(a, "sa\n");
     }
     else
     {
-        reverseRotate(a, "rra");
+        reverseRotate(a, "rra\n");
         if(!stack_sorted(*a))
-            swap(a, "sa");
+            swap(a, "sa\n");
     }
 }

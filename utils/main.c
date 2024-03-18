@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
         if(!stack_sorted(a) || !isEmpty(a))
         {
             if (size == 2)
-                swap(&a, "sa");
+                swap(&a, "sa\n");
             else if (size == 3)
                 sort_3(&a);
             else if (size > 3 && size <= 5)
@@ -31,6 +31,6 @@ int	main(int argc, char **argv)
                 printf("Array too large for this implementation.\n");
         }
         else
-            ft_printf("stack already sorted or empty\n");
+            return (0);
     }
 }
