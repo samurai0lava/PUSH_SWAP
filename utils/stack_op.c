@@ -5,8 +5,8 @@ void reverseRotate(stack_i **head, char *str)
 	stack_i *temp;
     stack_i *newLast;
 
-	if (isEmpty(*head)) 
-        return;
+	// if (isEmpty(*head)) 
+    //     return;
     temp = *head;
     while (temp->next->next != NULL) 
 	{
@@ -26,8 +26,7 @@ void rotate(stack_i **head, char *str)
     stack_i *temp;
     stack_i *newLast;
 
-    if (isEmpty(*head)) 
-        return;
+
     temp = *head;
     while (temp->next != NULL) 
     {

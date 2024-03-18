@@ -24,10 +24,7 @@ int	main(int argc, char **argv)
             if (size == 2)
                 swap(&a, "sa");
             else if (size == 3)
-            {
                 sort_3(&a);
-                print_stack(a);
-            }
             else if (size > 3 && size <= 5)
                 sort_5(&a, &b, size);
             else
