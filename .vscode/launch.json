@@ -8,7 +8,7 @@
             "request": "launch",
             "stopAtEntry": false,
             "program": "${workspaceFolder}/push_swap",
-            "args": ["1001", "100", "1"],
+            "args": ["10", "9", "1"],
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,

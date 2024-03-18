@@ -29,24 +29,20 @@ static stack_i* find_max(stack_i* a)
 // }
 void sort_3(stack_i **a)
 {
-    if (*a == NULL || (*a)->next == NULL || (*a)->next->next == NULL)
-        return;
     stack_i *maxNode;
     stack_i *lastNode;
-    // stack_i *first_node1;
     
     lastNode = find_last_node(*a);
-    // first_node1 = first_node(*a, lastNode);
     maxNode = find_max(*a);
-    
-    if (maxNode->data == lastNode->data)                
-        swap(a, "sa\n");
-    else if(maxNode->data == (*a)->data)
+
+    if(maxNode->data == (*a)->data)
     {
         rotate(a, "ra\n");
         if(!stack_sorted(*a))
             swap(a, "sa\n");
     }
+    else if (maxNode->data == lastNode->data)                
+        swap(a, "sa\n");
     else
     {
         reverseRotate(a, "rra\n");
