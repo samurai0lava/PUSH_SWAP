@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-static stack_i	*find_last_node(stack_i *head)
+stack_i	*find_last_node(stack_i *head)
 {
 	if (head == NULL)
 		return (NULL);

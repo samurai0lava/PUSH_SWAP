@@ -44,10 +44,7 @@ void rotate(stack_i **head, char *str)
 void swap(stack_i **head, char *str)
 {
     if (*head == NULL || (*head)->next == NULL)
-    {
-        printf("Cannot swap: stack is empty or has only one element.\n");
         return;
-    }
 
     stack_i *first = *head;
     stack_i *second = first->next;
