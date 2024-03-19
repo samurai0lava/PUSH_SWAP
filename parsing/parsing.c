@@ -12,6 +12,17 @@
 
 #include "../push_swap.h"
 
+int empty(char *str)
+{
+	int i = 0;
+	while (str[i] && str[i] == ' ') 
+		i++;
+	if (str[i] == '\0')
+		return (1);
+	return (0);
+}
+
+
 int	check_inputs(int argc, char **argv)
 {
 	int	i;
@@ -22,8 +33,9 @@ int	check_inputs(int argc, char **argv)
 	{
 		j = 0;
 		while (argv[i][j])
-		{
-
+		{	
+			if(empty(argv[i]) == 1)
+				return (1);
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
 				return (1);
 			if ((argv[i][j] == '+' || argv[i][j] == '-') && (argv[i][j + 1] == '+' || argv[i][j + 1] == '-' \
@@ -36,7 +48,6 @@ int	check_inputs(int argc, char **argv)
 	return (0);
 }
 
-int isEmpty(œ)
 
 char	**split_args(int argc, char **argv) 
 {
