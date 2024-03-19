@@ -10,8 +10,8 @@ int	main(int argc, char **argv)
     re = NULL; 
 	a = NULL;
 	b = NULL;
-	if (1 == argc || (2 == argc && !argv[1][0]))
-		return (1);
+	if (1 == argc)
+		return (0);
     else
     {
         re = parsing(argc,argv);

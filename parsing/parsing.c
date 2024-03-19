@@ -20,11 +20,12 @@ int	check_inputs(int argc, char **argv)
 	i = 1;
 	while (i < argc) 
 	{
+		if(empty(argv[i]) == 1)
+			return 1;
 		j = 0;
 		while (argv[i][j])
 		{	
-			if(empty(argv[i]) == 1)
-				return (1);
+
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
 				return (1);
 			if ((argv[i][j] == '+' || argv[i][j] == '-') && (argv[i][j + 1] == '+' || argv[i][j + 1] == '-' \

@@ -3,7 +3,7 @@
 int empty(char *str)
 {
 	int i = 0;
-	while (str[i] && str[i] == ' ') 
+	while (str[i] && str[i] == ' ')
 		i++;
 	if (str[i] == '\0')
 		return (1);
