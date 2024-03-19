@@ -23,6 +23,7 @@ int	check_inputs(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
+
 			if (!ft_isdigit(argv[i][j]) && argv[i][j] != ' ' && argv[i][j] != '+' && argv[i][j] != '-')
 				return (1);
 			if ((argv[i][j] == '+' || argv[i][j] == '-') && (argv[i][j + 1] == '+' || argv[i][j + 1] == '-' \
@@ -35,6 +36,7 @@ int	check_inputs(int argc, char **argv)
 	return (0);
 }
 
+int isEmpty(œ)
 
 char	**split_args(int argc, char **argv) 
 {

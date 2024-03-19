@@ -19,7 +19,7 @@ void reverseRotate(stack_i **head, char *str)
     ft_printf(str);
 }
 
-void    rotate(stack_i **stack, char *str)
+void rotate(stack_i **stack, char *str)
 {
     stack_i    *last;
 
@@ -52,19 +52,14 @@ void swap(stack_i **head, char *str)
     ft_printf(str); 
 }
 
-void    push(stack_i* stack, int data) 
+void push(stack_i **a, stack_i **b, char *str)
 {
-    stack_i* newNode;
-    
-    newNode = (struct stack_node*)malloc(sizeof(struct stack_node));
-    if (!newNode)
-        return;
-    newNode->data = data;
-    newNode->next = stack->top;
-    newNode->prev = NULL;
-    if (stack->top != NULL) 
-        stack->top->prev = newNode;
-    stack->top = newNode;
+    stack_i *tmp;
+    if(*b)
+        return ;
+    tmp = *b;
+    (*b) = (*b)->next;
+    tmp->next  = *a;
+    *a = tmp;
+    ft_printf(str);
 }
-
-

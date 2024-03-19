@@ -34,7 +34,7 @@ void    init(stack_i **stack, array_s *re);
 stack_i	*find_last_node(stack_i *head);
 stack_i *createStack(int content);
 int     isEmpty(stack_i* stack);
-void    push(stack_i* stack, int data);
+void    push(stack_i **a, stack_i **b, char *str);
 int     size_sp(char **splited);
 int     stack_len(stack_i *stack);
 void    sort_3(stack_i **a);
