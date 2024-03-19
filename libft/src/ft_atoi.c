@@ -12,7 +12,20 @@
 
 #include "../libft.h"
 
-int	ft_atoi(char *str)
+static void	free_arr(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
+int	ft_atoi(char *str, char **array, int *arr)
 {
 	int			sign;
 	long int	return_value;
@@ -31,12 +44,15 @@ int	ft_atoi(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		check = return_value;
-		return_value = return_value * 10 + (*str - 48) * sign;
-		if (return_value > check && sign < 0)
-			return (0);
-		if (return_value < check && sign > 0)
-			return (-1);
+		return_value = return_value * 10 + (*str - 48);
 		str++;
 	}
-	return (return_value);
+	if (return_value > INT_MAX || return_value < INT_MIN)
+	{
+		free_arr(array);
+		free(arr);
+		ft_putendl_fd("Error", 2);
+		exit (1);
+	}
+	return (return_value * sign);
 }

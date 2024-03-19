@@ -41,18 +41,11 @@ int check_duplicate(int *array, size_t size)
 array_s *parsing(int argc, char **argv) 
 {
     array_s *re;
-    char **splitted;
+    char    **splitted;
 
     re = (array_s *)malloc(sizeof(array_s));
     if (re == NULL) 
-    {
         error_quit("Error");
-    }    
-    if (argc < 2 || argv == NULL) 
-    {
-        free(re);
-        return NULL;
-    }
     if (check_inputs(argc, argv) == 1) 
     {
         error_quit("Error");
@@ -74,5 +67,5 @@ array_s *parsing(int argc, char **argv)
         free(re);
         return (NULL);
     }
-    return re;
+    return (re);
 }

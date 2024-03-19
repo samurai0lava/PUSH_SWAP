@@ -45,4 +45,5 @@ void    print_stack(stack_i *stack);
 void    push_swap(stack_i **a, stack_i **b, int size);
 int	    stack_sorted(stack_i *stack);
 void    sort_5(stack_i **a, stack_i **b, int size);
+int     empty(char *str);
 #endif

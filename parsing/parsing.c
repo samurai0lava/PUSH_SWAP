@@ -12,17 +12,6 @@
 
 #include "../push_swap.h"
 
-int empty(char *str)
-{
-	int i = 0;
-	while (str[i] && str[i] == ' ') 
-		i++;
-	if (str[i] == '\0')
-		return (1);
-	return (0);
-}
-
-
 int	check_inputs(int argc, char **argv)
 {
 	int	i;
@@ -109,7 +98,7 @@ int	*atoi_ad(char **splitted)
 		return (NULL);
 	while (splitted[i])
 	{
-		array[i] = ft_atoi(splitted[i]);
+		array[i] = ft_atoi(splitted[i], splitted, array);
 		i++;
 	}
 	return (array);

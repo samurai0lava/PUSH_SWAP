@@ -7,6 +7,7 @@ SRC = parsing/stack_init.c\
     utils/utils.c\
     parsing/parsing.c\
     parsing/parsing2.c\
+	parsing/utils_pars.c\
     utils/main.c\
 	utils/stack_op.c\
 	sorting/sort_5.c\
