@@ -41,6 +41,8 @@ int	check_inputs(int argc, char **argv)
 			if ((argv[i][j] == '+' || argv[i][j] == '-') && (argv[i][j + 1] == '+' || argv[i][j + 1] == '-' \
                                         || argv[i][j + 1] == '\0' || argv[i][j + 1] == ' '))
 				return (1);
+			if((argv[i][j] == '+' || argv[i][j] == '-') && (ft_isdigit(argv[i][j - 1])))
+				return (1);
 			j++;
 		}
 		i++;
