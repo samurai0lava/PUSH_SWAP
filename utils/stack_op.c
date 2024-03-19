@@ -55,11 +55,11 @@ void swap(stack_i **head, char *str)
 void push(stack_i **a, stack_i **b, char *str)
 {
     stack_i *tmp;
-    if(*b)
+    if(!*a)
         return ;
-    tmp = *b;
-    (*b) = (*b)->next;
-    tmp->next  = *a;
-    *a = tmp;
+    tmp = *a;
+    (*a) = (*a)->next;
+    tmp->next = *b;
+    *b = tmp;
     ft_printf(str);
 }

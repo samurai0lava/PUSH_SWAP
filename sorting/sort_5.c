@@ -25,7 +25,7 @@ void sort_5(stack_i **a, stack_i **b, int size)
         min = find_min(*a);
         
         if ((*a)->data == min)
-            push(a, b, "pb\n");   
+            push(a, b, "pb\n");
         else
             rotate(a, "ra\n");
         i++;
@@ -33,4 +33,6 @@ void sort_5(stack_i **a, stack_i **b, int size)
     sort_3(a);
     push(b, a, "pa\n");
     push(b, a, "pa\n");
+    print_stack(*a);
+    print_stack(*b);
 }
