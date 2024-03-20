@@ -1,16 +1,33 @@
 #include "../push_swap.h"
 
-static int find_min(stack_i *a)
-{
-    int min;
+// static int find_min(stack_i *a)
+// {
+//     int min;
 
-    min = a->data;
-    while (a)
-    {
-        if (a->data < min)
-            min = a->data;
-        a = a->next;
+//     min = a->data;
+//     while (a)
+//     {
+//         if (a->data < min)
+//             min = a->data;
+//         a = a->next;
+//     }
+//     return (min);
+// }
+static int find_min(stack_i *a) 
+{
+    if (a == NULL) 
+        exit(EXIT_FAILURE);
+
+    int min = a->data;
+    stack_i *current = a->next;
+
+    while (current != NULL) {
+        if (current->data < min) {
+            min = current->data;
+        }
+        current = current->next;
     }
+
     return (min);
 }
 
@@ -23,7 +40,6 @@ void sort_5(stack_i **a, stack_i **b, int size)
     while (i < 2 && size > 3)
     {
         min = find_min(*a);
-        
         if ((*a)->data == min)
             push(a, b, "pb\n");
         else

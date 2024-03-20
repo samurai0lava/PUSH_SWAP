@@ -25,11 +25,10 @@ static void	free_arr(char **arr)
 	free(arr);
 }
 
-int	ft_atoi(char *str, char **array, int *arr)
+long double	ft_atoi(char *str, char **array, int *arr)
 {
 	int			sign;
-	long int	return_value;
-	long int	check;
+	long double	return_value;
 
 	sign = 1;
 	return_value = 0;
@@ -43,7 +42,6 @@ int	ft_atoi(char *str, char **array, int *arr)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		check = return_value;
 		return_value = return_value * 10 + (*str - 48);
 		str++;
 	}
