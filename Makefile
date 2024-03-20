@@ -1,7 +1,7 @@
 NAME = push_swap
 LIB = libft/libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 SRC = parsing/stack_init.c\
     utils/utils.c\
@@ -28,7 +28,6 @@ $(LIB):
 	@$(MAKE) -C libft
 
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)..MAKING libft....................."
 	@echo "Compiling PUSH_SWAP................$(RESET)"
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
 	@echo "$(GREEN)DONE............................$(RESET)"
