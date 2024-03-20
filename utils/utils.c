@@ -31,17 +31,13 @@ int isEmpty(stack_i* stack)
 }
 
 int stack_len(stack_i *stack)
-{    
-    if(isEmpty(stack))
-        return 0;
+{
     int len = 0;
-    stack_i *temp = stack;
-    
-    while (temp != NULL) {
+    while (stack)
+    {
         len++;
-        temp = temp->next;
+        stack = stack->next;
     }
-    
     return len;
 }
 
@@ -70,3 +66,5 @@ void print_stack(stack_i *stack)
     }
     printf("\n");
 }
+
+
