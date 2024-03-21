@@ -39,8 +39,7 @@ static void set_price(stack_i *a, stack_i *b)
 {
 
 }
-
-static void init_param(stack_i *a, stack_i *b)
+void init_param(stack_i *a, stack_i *b)
 {
 	set_index(a);
 	set_index(b);
