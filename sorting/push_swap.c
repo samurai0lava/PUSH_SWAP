@@ -20,6 +20,8 @@ static void set_target(stack_i *a, stack_i *b)
             }
             current = current->next;
         }
+        if(best_match == LONG_MAX)
+        
     }
 }
 void push_swap(stack_i **a, stack_i **b, array_s *re)
