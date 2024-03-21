@@ -18,7 +18,8 @@ typedef struct stack_node
 {
     int current_position;
     int data;
-
+    
+    struct stack_node *target;
     struct stack_node *top;
     struct stack_node *next;
     struct stack_node *prev;
