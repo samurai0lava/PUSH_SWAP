@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static int find_min(stack_i *a)
+int find_min(stack_i *a)
 {
     int min;
 
@@ -14,7 +14,7 @@ static int find_min(stack_i *a)
     return (min);
 }
 
-static int get_index(stack_i *stack, int nbr)
+int get_index(stack_i *stack, int nbr)
 {
     int index = 0;
     while (stack)

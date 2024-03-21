@@ -16,13 +16,15 @@ typedef struct array_size
 
 typedef struct stack_node
 {
-    int current_position;
-    int data;
-    
-    struct stack_node *target;
-    struct stack_node *top;
-    struct stack_node *next;
-    struct stack_node *prev;
+    int     current_position;
+    int     data;
+    int     cost;
+    bool    median_top;
+    bool    cheapest;
+    struct  stack_node *target;
+    struct  stack_node *top;
+    struct  stack_node *next;
+    struct  stack_node *prev;
 } stack_i;
 
 int		check_duplicate(int *array, size_t size);
@@ -43,8 +45,12 @@ void    reverseRotate(stack_i **head, char *str);
 void    rotate(stack_i **head, char *str);
 void    swap(stack_i **head, char *str);
 void    print_stack(stack_i *stack);
-void    push_swap(stack_i **a, stack_i **b, int size);
+void    push_swap(stack_i **a, stack_i **b);
 int	    stack_sorted(stack_i *stack);
 void    sort_5(stack_i **a, stack_i **b, int size);
 int     empty(char *str);
+int     find_min(stack_i *a);
+int     get_index(stack_i *stack, int nbr);
+
+
 #endif
