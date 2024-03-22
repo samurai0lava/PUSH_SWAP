@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static void set_target(stack_i *a, stack_i *b)
+void set_target(stack_i *a, stack_i *b)
 {
     stack_i *current;
     stack_i *target;
@@ -20,14 +20,14 @@ static void set_target(stack_i *a, stack_i *b)
             current = current->next;
         }
         if(best_match == LONG_MAX)
-            b->target = find_min(a);
+            b->target->data = find_min(a);
         else
             b->target = target;
         b = b->next;
     }
 }
 
-static void set_cheapest(stack_i *b)
+void set_cheapest(stack_i *b)
 {
 	stack_i	*current;
 	stack_i	*cheapest;
@@ -53,12 +53,14 @@ static void set_cheapest(stack_i *b)
     }
 }
 
-static void set_index(stack_i *a)
+void set_index(stack_i *a)
 {
 	int index_S;
 	int size;
 
-	size = stack_len;
+    if (!a)
+        return;
+	size = stack_len(a);
 	while(a)
 	{
 		index_S = get_index(a, a->data);
@@ -70,11 +72,14 @@ static void set_index(stack_i *a)
 		a = a->next;
 	}
 }
-static void set_price(stack_i *a, stack_i *b)
+
+void set_price(stack_i *a, stack_i *b)
 {
     int len_stack_a;
 	int	len_stack_b;
 	
+    if (!b)
+        return;
 	len_stack_a = stack_len(a);
     len_stack_b = stack_len(b);
 

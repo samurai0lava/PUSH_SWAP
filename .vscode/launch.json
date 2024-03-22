@@ -1,19 +1,18 @@
 {
     "version": "0.2",
     "configurations": [
-        
         {
-            "name": "C Debug",
+            "name": "Launch (lldb)",
             "type": "cppdbg",
             "request": "launch",
-            "stopAtEntry": false,
             "program": "${workspaceFolder}/push_swap",
-            "args": ["10", "9", "1"],
+            "args": [],
+            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
-            "miDebuggerPath": "/usr/bin/gdb",
-            "MIMode": "gdb",
+            "MIDebuggerPath": "/Applications/Xcode.app/Contents/Developer/usr/bin/lldb",
+            "externalConsole": false
         }
     ]
+    
 }

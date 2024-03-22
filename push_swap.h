@@ -52,6 +52,10 @@ int     empty(char *str);
 int     find_min(stack_i *a);
 int     get_index(stack_i *stack, int nbr);
 void    init_param(stack_i *a, stack_i *b);
+void    set_target(stack_i *a, stack_i *b);
+void    set_cheapest(stack_i *b);
+void    set_index(stack_i *a);
+void    set_price(stack_i *a, stack_i *b);
 
 
 #endif
