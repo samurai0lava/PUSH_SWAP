@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
             else if (size > 3 && size <= 5)
                 sort_5(&a, &b, size);
             else
-                printf("Array too large for this implementation.\n");
+                push_swap(&a, &b);
         }
         else
             return (0);

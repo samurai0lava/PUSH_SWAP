@@ -19,8 +19,8 @@ typedef struct stack_node
     int     current_position;
     int     data;
     int     cost;
-    bool    median_top;
-    bool    cheapest;
+    int     median_top;
+    int     cheapest;
     struct  stack_node *target;
     struct  stack_node *top;
     struct  stack_node *next;

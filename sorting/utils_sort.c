@@ -26,19 +26,71 @@ static void set_target(stack_i *a, stack_i *b)
         b = b->next;
     }
 }
+
 static void set_cheapest(stack_i *b)
 {
+	stack_i	*current;
+	stack_i	*cheapest;
+    
+	if (!b)
+        return;
 
+    current = b;
+    cheapest = b;
+    while (current) 
+	{
+        if (current->cost < cheapest->cost) 
+            cheapest = current;
+        current = current->next;
+    }
+    cheapest->cheapest = 1;
+    current = b;
+    while (current) 
+	{
+        if (current != cheapest) 
+            current->cheapest = 0;
+        current = current->next;
+    }
 }
 
 static void set_index(stack_i *a)
 {
+	int index_S;
+	int size;
 
+	size = stack_len;
+	while(a)
+	{
+		index_S = get_index(a, a->data);
+		a->current_position = index_S;
+		if(index_S > size/2)
+			a->median_top = 0;
+		else
+			a->median_top = 1;
+		a = a->next;
+	}
 }
 static void set_price(stack_i *a, stack_i *b)
 {
+    int len_stack_a;
+	int	len_stack_b;
+	
+	len_stack_a = stack_len(a);
+    len_stack_b = stack_len(b);
 
+    while (b)
+    {
+        b->cost = b->current_position;
+        if (b->median_top == 1)
+            b->cost = len_stack_b - b->current_position;
+        else if (b->median_top == 0)
+            b->cost += b->target->current_position;
+        else
+            b->cost += len_stack_a - b->target->current_position;
+        b = b->next;
+    }
 }
+
 void init_param(stack_i *a, stack_i *b)
 {
 	set_index(a);
