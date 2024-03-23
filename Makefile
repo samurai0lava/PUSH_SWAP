@@ -12,7 +12,8 @@ SRC = parsing/stack_init.c\
 	utils/stack_op.c\
 	sorting/sort_5.c\
 	sorting/sort_3.c\
-	sorting/utils_sort.c\
+	sorting/utils_sort_a.c\
+	sorting/utils_sort_b.c\
 	sorting/push_swap.c\
 	utils/ft_atoiv2.c
 	

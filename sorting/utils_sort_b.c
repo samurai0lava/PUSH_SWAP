@@ -6,6 +6,7 @@ void set_target(stack_i *a, stack_i *b)
     stack_i *target;
     long    best_match;
 
+    target = NULL;
     while (b)
     {
         current = a;
@@ -20,7 +21,7 @@ void set_target(stack_i *a, stack_i *b)
             current = current->next;
         }
         if(best_match == LONG_MAX)
-            b->target->data = find_min(a);
+            b->target = find_min_node(a);
         else
             b->target = target;
         b = b->next;
@@ -78,8 +79,6 @@ void set_price(stack_i *a, stack_i *b)
     int len_stack_a;
 	int	len_stack_b;
 	
-    if (!b)
-        return;
 	len_stack_a = stack_len(a);
     len_stack_b = stack_len(b);
 
@@ -101,7 +100,6 @@ void init_param(stack_i *a, stack_i *b)
 	set_index(a);
 	set_index(b);
 	set_target(a ,b);
-    printf("allo\n");
 	set_price(a,b);
 	set_cheapest(b);
 }

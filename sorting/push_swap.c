@@ -6,14 +6,27 @@ void push_swap(stack_i **a, stack_i **b)
 
     len_a = stack_len(*a);
 
-    while(len_a > 3)
-    {
+    if(len_a-- > 3 && !stack_sorted(*a))
         push(a, b, "pb\n");
-        len_a = stack_len(*a);
+    if(len_a-- > 3 && !stack_sorted(*a))
+        push(a, b, "pb\n");
+	while(len_a-- > 3 && !stack_sorted(*a))
+    {
+        init_param_a(*a, *b);
+        moves_a(a, b);
     }
     sort_3(a);
-	while(*b)
+    while(*b)
     {
-        init_param(*a, *b);
+        init_param_a(*a, *b);
+        moves_b(a, b);
     }
+    set_index(*a);
+    final_move(a);
+    // stack_i *tmp2 = (*a);
+    // while(tmp2)
+    // {
+    //     printf("a->next = %d\n", tmp2->data);
+    //     tmp2 = tmp2->next;
+    // }
 }
