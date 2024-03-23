@@ -15,8 +15,9 @@ SRC = parsing/stack_init.c\
 	sorting/utils_sort_a.c\
 	sorting/utils_sort_b.c\
 	sorting/push_swap.c\
+	sorting/moves.c\
 	utils/ft_atoiv2.c
-	
+
 OBJ = $(SRC:.c=.o)
 
 # ANSI color codes
