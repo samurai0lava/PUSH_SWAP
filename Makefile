@@ -30,7 +30,7 @@ $(LIB):
 	@$(MAKE) -C libft
 
 $(NAME): $(OBJ)
-	@echo "Compiling PUSH_SWAP................$(RESET)"
+	@echo "$(YELLOW)Compiling PUSH_SWAP................$(RESET)"
 	$(CC) $(CFLAGS) $(OBJ) $(LIB) -o $@
 	@echo "$(GREEN)DONE............................$(RESET)"
 

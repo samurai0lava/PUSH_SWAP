@@ -101,6 +101,7 @@ void init_param(stack_i *a, stack_i *b)
 	set_index(a);
 	set_index(b);
 	set_target(a ,b);
+    printf("allo\n");
 	set_price(a,b);
 	set_cheapest(b);
 }
