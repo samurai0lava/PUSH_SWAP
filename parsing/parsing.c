@@ -99,7 +99,7 @@ int	*atoi_ad(char **splitted)
 		return (NULL);
 	while (splitted[i])
 	{
-		array[i] = ft_atoi(splitted[i], splitted, array);
+		array[i] = ft_atoiv2(splitted[i], splitted, array);
 		i++;
 	}
 	return (array);

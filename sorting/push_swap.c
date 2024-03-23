@@ -12,7 +12,7 @@ void push_swap(stack_i **a, stack_i **b)
         len_a = stack_len(*a);
     }
     sort_3(a);
-	while(b)
+	while(*b)
     {
         init_param(*a, *b);
     }

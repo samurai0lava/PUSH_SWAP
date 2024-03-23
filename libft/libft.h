@@ -33,7 +33,7 @@ char				*ft_strnstr(const char *str, const char *to_find, \
 					size_t len);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-long double		    ft_atoi(char *str, char **array, int *arr);
+int					ft_atoi(const char *str);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);

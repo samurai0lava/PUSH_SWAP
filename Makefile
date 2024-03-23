@@ -13,7 +13,8 @@ SRC = parsing/stack_init.c\
 	sorting/sort_5.c\
 	sorting/sort_3.c\
 	sorting/utils_sort.c\
-	sorting/push_swap.c
+	sorting/push_swap.c\
+	utils/ft_atoiv2.c
 	
 OBJ = $(SRC:.c=.o)
 

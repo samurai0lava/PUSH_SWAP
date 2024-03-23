@@ -56,6 +56,7 @@ void    set_target(stack_i *a, stack_i *b);
 void    set_cheapest(stack_i *b);
 void    set_index(stack_i *a);
 void    set_price(stack_i *a, stack_i *b);
+long double	ft_atoiv2(char *str, char **array, int *arr);
 
 
 #endif
