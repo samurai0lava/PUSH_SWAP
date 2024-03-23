@@ -7,6 +7,7 @@
 # include <unistd.h>
 # include "libft/libft.h"
 # include <string.h>
+# include <limits.h>
 
 typedef struct array_size
 {
@@ -51,11 +52,10 @@ void    sort_5(stack_i **a, stack_i **b, int size);
 int     empty(char *str);
 stack_i *find_min_node(stack_i *a);
 int     get_index(stack_i *stack, int nbr);
-void    init_param(stack_i *a, stack_i *b);
-void    set_target(stack_i *a, stack_i *b);
-void    set_cheapest(stack_i *b);
+void    init_param_a(stack_i *a, stack_i *b);
+void    set_cheapest(stack_i *stack);
 void    set_index(stack_i *a);
-void    set_price(stack_i *a, stack_i *b);
+void    set_price_a(stack_i *a, stack_i *b);
 long double	ft_atoiv2(char *str, char **array, int *arr);
 
 
