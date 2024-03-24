@@ -55,7 +55,7 @@ void set_cheapest(stack_i *stack)
     }
 }
 
-void	current_index(stack_i *stack)
+void	set_index(stack_i *stack)
 {
 	int	i; 
 	int	median; 
@@ -70,7 +70,7 @@ void	current_index(stack_i *stack)
 		if (i <= median) 
 			stack->median_top = true; 
 		else
-			stack->median_top = false; 
+			stack->median_top = false;
 		stack = stack->next; 
 		++i; 
 	}

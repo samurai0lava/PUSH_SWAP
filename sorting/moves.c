@@ -23,7 +23,7 @@ static void	rev_rotate_both(stack_i **a, stack_i **b, stack_i *cheapest_node)
 }
 void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name) 
 {
-	while (*stack != top_node) 
+	while (*stack != top_node && (*stack)->next != NULL) 
 	{
 		if (stack_name == 'a') 
 		{
@@ -38,14 +38,15 @@ void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name)
 				rotate(stack, "rb\n");
 			else
 				reverseRotate(stack, "rrb\n");
-		}	
+		}
+        (*stack) = (*stack)->next;	
 	}
 }
 void	final_move(stack_i **a) 
 {
-	while ((*a)->data != find_min((*a)->data))
+	while ((*a)->data != find_min_node(*a)->data)
 	{
-		if (find_min((*a)->median_top)) 
+		if (find_min_node(*a)->median_top) 
 			rotate(a, "ra\n");
 		else
 			reverseRotate(a, "rra\n");
