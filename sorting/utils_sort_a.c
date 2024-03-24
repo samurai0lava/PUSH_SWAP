@@ -55,23 +55,24 @@ void set_cheapest(stack_i *stack)
     }
 }
 
-void set_index(stack_i *a)
+void	current_index(stack_i *stack)
 {
-	int index_S;
-	int size;
+	int	i; 
+	int	median; 
 
-    if (!a)
-        return;
-	size = stack_len(a);
-	while(a)
+	i = 0; 
+	if (!stack) 
+		return ;
+	median = stack_len(stack) / 2; 
+	while (stack) 
 	{
-		index_S = get_index(a, a->data);
-		a->current_position = index_S;
-		if(index_S > size/2)
-			a->median_top = 0;
+		stack->current_position = i; 
+		if (i <= median) 
+			stack->median_top = true; 
 		else
-			a->median_top = 1;
-		a = a->next;
+			stack->median_top = false; 
+		stack = stack->next; 
+		++i; 
 	}
 }
 

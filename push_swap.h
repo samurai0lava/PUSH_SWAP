@@ -8,6 +8,7 @@
 # include "libft/libft.h"
 # include <string.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct array_size
 {
@@ -20,7 +21,7 @@ typedef struct stack_node
     int     current_position;
     int     data;
     int     cost;
-    int     median_top;
+    bool    median_top;
     int     cheapest;
     struct  stack_node *target;
     struct  stack_node *top;
