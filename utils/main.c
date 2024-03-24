@@ -32,6 +32,5 @@ int	main(int argc, char **argv)
         }
         else
             return (0);
-        print_stack(a); 
     }
 }

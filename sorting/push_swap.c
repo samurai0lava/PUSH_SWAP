@@ -18,7 +18,6 @@ void	push_swap(stack_i **a, stack_i **b)
 	sort_3(a);
 	while (*b)
 	{
-		printf("allo111\n");
 		init_param_b(*a, *b);
 		moves_b(a, b);
 	}
