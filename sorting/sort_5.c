@@ -1,19 +1,23 @@
 #include "../push_swap.h"
 
-stack_i *find_min_node(stack_i *a)
+stack_i	*find_min_node(stack_i *stack) 
 {
-    int min;
-    stack_i *tmp;
+	long			min; 
+	stack_i	*min_node; 
 
-    min = a->data;
-    while (a)
-    {
-        if (a->data < min)
-            min = a->data;
-        a = a->next;
-    }
-    tmp = a;
-    return (tmp);
+	if (!stack)
+		return (NULL);
+	min = LONG_MAX; 
+	while (stack) 
+	{
+		if (stack->data < min) 
+		{
+			min = stack->data; 
+			min_node = stack; 
+		}
+		stack = stack->next; 
+	}
+	return (min_node); 
 }
 int find_min(stack_i *a)
 {
@@ -28,12 +32,12 @@ int find_min(stack_i *a)
 
 }
 
-int get_index(stack_i *stack, int nbr)
+int get_index(stack_i *stack, int data)
 {
     int index = 0;
     while (stack)
     {
-        if (stack->data == nbr)
+        if (stack->data == data)
             return index;
         index++;
         stack = stack->next;
