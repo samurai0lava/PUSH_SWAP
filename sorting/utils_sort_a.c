@@ -29,31 +29,26 @@ static void	set_target_a(stack_i *a, stack_i *b)
 	}
 }
 
-void set_cheapest(stack_i *stack)
+void	set_cheapest(stack_i *stack) 
 {
-	stack_i	*current;
-	stack_i	*cheapest;
-    
-	if (!stack)
-        return;
+	long			cheapest_value; 
+	stack_i	*cheapest_node; 
 
-    current = stack;
-    cheapest = stack;
-    while (current) 
+	if (!stack) 
+		return ;
+	cheapest_value = LONG_MAX; 
+	while (stack) 
 	{
-        if (current->cost < cheapest->cost) 
-            cheapest = current;
-        current = current->next;
-    }
-    cheapest->cheapest = 1;
-    current = stack;
-    while (current) 
-	{
-        if (current != cheapest) 
-            current->cheapest = 0;
-        current = current->next;
-    }
+		if (stack->cost < cheapest_value) 
+		{
+			cheapest_value = stack->cost; 
+			cheapest_node = stack; 
+		}
+		stack = stack->next; 
+	}
+	cheapest_node->cheapest = true; 
 }
+
 
 void	set_index(stack_i *stack)
 {
