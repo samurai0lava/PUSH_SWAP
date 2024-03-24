@@ -6,26 +6,25 @@ static void	set_target_a(stack_i *a, stack_i *b)
 	stack_i	*target_node;
 	long	best_match;
 
-    target_node = NULL;
+	target_node = NULL;
 	while (a)
 	{
-		best_match= LONG_MIN;
+		best_match = LONG_MIN;
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->data < a->data 
-				&& current_b->data > best_match) 
+			if (current_b->data < a->data && current_b->data > best_match)
 			{
-				best_match= current_b->data; 
-				target_node = current_b; 
+				best_match = current_b->data;
+				target_node = current_b;
 			}
-			current_b = current_b->next; 
+			current_b = current_b->next;
 		}
-		if (best_match == LONG_MIN) 
-			a->target= find_min_node(b); 
+		if (best_match == LONG_MIN)
+			a->target = find_min_node(b);
 		else
-			a->target= target_node; 
-		a = a->next; 
+			a->target = target_node;
+		a = a->next;
 	}
 }
 

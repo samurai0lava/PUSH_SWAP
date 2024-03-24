@@ -25,10 +25,13 @@ void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name)
 {
 	while (*stack != top_node && (*stack)) 
 	{
-		if (stack_name == 'a') 
+		if (stack_name == 'a')
 		{
 			if (top_node->median_top)
+			{
 				rotate(stack, "ra\n");
+				printf("allo\n");
+			}
 			else
 				reverseRotate(stack, "rra\n");
 		}
@@ -39,15 +42,17 @@ void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name)
 			else
 				reverseRotate(stack, "rrb\n");
 		}
-        (*stack) = (*stack)->next;	
+        (*stack) = (*stack)->next;
 	}
 }
 void	final_move(stack_i **a) 
 {
 	while ((*a)->data != find_min_node(*a)->data)
 	{
-		if (find_min_node(*a)->median_top) 
+		if (find_min_node(*a)->median_top)
+		{
 			rotate(a, "ra\n");
+		}
 		else
 			reverseRotate(a, "rra\n");
 	}
@@ -69,7 +74,7 @@ void moves_a(stack_i **a, stack_i **b)
 
 void moves_b(stack_i **a, stack_i **b)
 {
-    prep_for_push(a, (*b)->target, 'a');
+    prep_for_push(a, (*b)->target, 'b');
     push(b, a, "pa\n");
 }
 
