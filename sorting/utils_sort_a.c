@@ -32,7 +32,7 @@ static void	set_target_a(stack_i *a, stack_i *b)
 void	set_cheapest(stack_i *stack) 
 {
 	long			cheapest_value; 
-	stack_i	*cheapest_node; 
+	stack_i			*cheapest_node; 
 
 	if (!stack) 
 		return ;
@@ -46,7 +46,7 @@ void	set_cheapest(stack_i *stack)
 		}
 		stack = stack->next; 
 	}
-	cheapest_node->cheapest = true; 
+	cheapest_node->cheapest = true;
 }
 
 

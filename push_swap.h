@@ -22,12 +22,17 @@ typedef struct stack_node
     int     data;
     int     cost;
     bool    median_top;
-    int     cheapest;
+    bool     cheapest;
     struct  stack_node *target;
     struct  stack_node *top;
     struct  stack_node *next;
     struct  stack_node *prev;
 } stack_i;
+
+// typedef enum {
+//     false,
+//     true
+// } bool;
 
 int		check_duplicate(int *array, size_t size);
 array_s *parsing(int argc, char **argv);
@@ -54,6 +59,7 @@ int     empty(char *str);
 stack_i *find_min_node(stack_i *a);
 int     get_index(stack_i *stack, int nbr);
 void    init_param_a(stack_i *a, stack_i *b);
+void    init_param_b(stack_i *a, stack_i *b);
 void    set_cheapest(stack_i *stack);
 void    set_index(stack_i *a);
 void    set_price_a(stack_i *a, stack_i *b);

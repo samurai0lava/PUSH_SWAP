@@ -23,7 +23,7 @@ static void	rev_rotate_both(stack_i **a, stack_i **b, stack_i *cheapest_node)
 }
 void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name) 
 {
-	while (*stack != top_node && (*stack)->next != NULL) 
+	while (*stack != top_node && (*stack)) 
 	{
 		if (stack_name == 'a') 
 		{
