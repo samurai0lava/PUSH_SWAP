@@ -19,17 +19,18 @@ void reverseRotate(stack_i **head, char *str)
     ft_printf(str);
 }
 
-void rotate(stack_i **stack, char *str)
+static void	rotate(stack_i **stack, char *str) 
 {
-    stack_i    *last;
+	stack_i	*last_node; 
 
-    if (!*stack || !(*stack)->next)
-        return ;
-    last = *stack;
-    *stack = find_last_node(*stack);
-    (*stack)->next = last;
-    *stack = last->next;
-    last->next = NULL;
+	if (!*stack || !(*stack)->next) 
+		return ;
+	last_node = find_last(*stack); 
+	last_node->next = *stack; 
+	*stack = (*stack)->next; 
+	(*stack)->prev = NULL; 
+	last_node->next->prev = last_node; 
+	last_node->next->next = NULL; 
     ft_printf(str);
 }
 
