@@ -9,7 +9,7 @@ void set_target_b(stack_i *a, stack_i *b)
     target_node = NULL;
     while (b)
     {
-        current_a = a
+        current_a = a;
         best_match = LONG_MAX;
         while(current_a)
         {
@@ -26,6 +26,19 @@ void set_target_b(stack_i *a, stack_i *b)
             b->target = target_node;
         b = b->next;
     }
+}
+
+stack_i	*get_cheapest(stack_i *stack) 
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
 
 void init_param_b(stack_i *a, stack_i *b)

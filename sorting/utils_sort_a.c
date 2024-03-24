@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static void	set_target_a(t_stack_node *a, t_stack_node *b)
+static void	set_target_a(stack_i *a, stack_i *b)
 {
 	stack_i	*current_b;
 	stack_i	*target_node;
@@ -13,8 +13,8 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->nbr < a->nbr 
-				&& current_b->nbr > best_match_index) 
+			if (current_b->data < a->data 
+				&& current_b->data > best_match) 
 			{
 				best_match= current_b->data; 
 				target_node = current_b; 
@@ -71,7 +71,7 @@ void set_index(stack_i *a)
 			a->median_top = 0;
 		else
 			a->median_top = 1;
-		a = a->next
+		a = a->next;
 	}
 }
 

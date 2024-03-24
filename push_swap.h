@@ -57,6 +57,9 @@ void    set_cheapest(stack_i *stack);
 void    set_index(stack_i *a);
 void    set_price_a(stack_i *a, stack_i *b);
 long double	ft_atoiv2(char *str, char **array, int *arr);
-
-
+void    moves_a(stack_i **a, stack_i **b);
+stack_i	*get_cheapest(stack_i *stack); 
+void    moves_b(stack_i **a, stack_i **b);
+int     find_min(stack_i *a);
+void	final_move(stack_i **a);
 #endif
