@@ -1,18 +1,5 @@
 #include "../push_swap.h"
 
-static void	free_arr(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
-}
-
 long double	ft_atoiv2(char *str, char **array, int *arr)
 {
 	int			sign;
@@ -35,7 +22,7 @@ long double	ft_atoiv2(char *str, char **array, int *arr)
 	}
 	if (return_value > INT_MAX || return_value < INT_MIN)
 	{
-		free_arr(array);
+		free_array(array);
 		free(arr);
 		ft_putendl_fd("Error", 2);
 		exit (1);

@@ -29,6 +29,8 @@ typedef struct stack_node
     struct  stack_node *prev;
 } stack_i;
 
+void        free_array(char **str);
+void        freestack(stack_i *stack); 
 int		    check_duplicate(int *array, size_t size);
 array_s     *parsing(int argc, char **argv);
 void	    error_quit(char *str);

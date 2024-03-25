@@ -50,13 +50,14 @@ array_s *parsing(int argc, char **argv)
     {
         error_quit("Error");
         free(re);
-        return NULL;
+        return(NULL);
     }
     splitted = split_args(argc, argv);
     if (splitted == NULL) 
     {
         free(re);
-        return NULL;
+        free(re->array);
+        return (NULL);
     }
     re->array = atoi_ad(splitted);
     re->size = size_sp(splitted);
@@ -65,7 +66,9 @@ array_s *parsing(int argc, char **argv)
         error_quit("Error");
         free(re->array);
         free(re);
+        free_array(splitted);
         return (NULL);
     }
+    free_array(splitted);
     return (re);
 }

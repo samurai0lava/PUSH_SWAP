@@ -55,7 +55,7 @@ void init(stack_i **a, array_s *re)
     *a = createStack(re->array[0]);
     if (*a == NULL)
     {
-        ft_putendl_fd("Error: Failed to initialize stack\n", 2);
+        ft_putendl_fd("Error\n", 2);
         return;
     }
     i = 1;
@@ -63,5 +63,7 @@ void init(stack_i **a, array_s *re)
     {
         append_node(a, re->array[i]);
         i++;
-    }
+    } 
+    free (re->array);
+    free (re);
 }

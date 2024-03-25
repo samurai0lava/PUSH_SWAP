@@ -67,4 +67,29 @@ void print_stack(stack_i *stack)
     printf("\n");
 }
 
+void freestack(stack_i *stack) 
+{
+    stack_i *current;
+    stack_i *temp;
 
+    current = stack;
+    while (current != NULL) 
+    {
+        temp = current;
+        current = current->next;
+        free(temp);
+    }
+}
+
+void free_array(char **str)
+{
+    int i;
+
+    i = 0;
+    while(str[i] != NULL)
+    {
+        free(str[i]);
+        i++;
+    }
+    free(str);
+}
