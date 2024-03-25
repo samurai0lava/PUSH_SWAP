@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
         if(!stack_sorted(a) || !isEmpty(a))
         {
             if (size == 2)
-                swap(&a, "sa\n");
+                swap(&a, 'a');
             else if (size == 3)
                 sort_3(&a);
             else if (size > 3 && size <= 5)
@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
                 push_swap(&a, &b);
             print_stack(a);
         }
+
         else
             return (0);
     }

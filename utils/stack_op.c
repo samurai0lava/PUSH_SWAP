@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-void reverseRotate(stack_i **head, char *str) 
+void reverseRotate(stack_i **head, char type) 
 {
 	stack_i *temp;
     stack_i *newLast;
@@ -16,10 +16,13 @@ void reverseRotate(stack_i **head, char *str)
     temp->next = NULL;
     newLast->prev = NULL;
     *head = newLast;
-    ft_printf(str);
+    if(type == 'a')
+        ft_printf("rra\n");
+    else if (type == 'b')
+        ft_printf("rrb\n");
 }
 
-void	rotate(stack_i **stack, char *str) 
+void	rotate(stack_i **stack, char type) 
 {
 	stack_i	*last_node; 
 
@@ -31,14 +34,14 @@ void	rotate(stack_i **stack, char *str)
 	(*stack)->prev = NULL; 
 	last_node->next->prev = last_node; 
 	last_node->next->next = NULL; 
-    ft_printf(str);
+    if(type == 'a')
+        ft_printf("ra\n");
+    else if (type == 'b')
+        ft_printf("rb\n");
 }
 
-void swap(stack_i **head, char *str)
+void swap(stack_i **head, char type)
 {
-    if (*head == NULL || (*head)->next == NULL)
-        return;
-
     stack_i *first = *head;
     stack_i *second = first->next;
 
@@ -50,10 +53,13 @@ void swap(stack_i **head, char *str)
     second->prev = NULL;
 
     *head = second;
-    ft_printf(str); 
+    if(type == 'a')
+        ft_printf("sa\n");
+    else if (type == 'b')
+        ft_printf("sb\n");
 }
 
-void push(stack_i **a, stack_i **b, char *str)
+void push(stack_i **a, stack_i **b, char type)
 {
     stack_i *tmp;
     if(!*a)
@@ -62,5 +68,8 @@ void push(stack_i **a, stack_i **b, char *str)
     (*a) = (*a)->next;
     tmp->next = *b;
     *b = tmp;
-    ft_printf(str);
+    if(type == 'a')
+        ft_printf("pa\n");
+    else if (type == 'b')
+        ft_printf("pb\n");
 }

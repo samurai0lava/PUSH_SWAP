@@ -4,8 +4,9 @@ static void	rotate_both(stack_i **a, stack_i **b, stack_i *cheapest_node)
 {
 	while ((*b) != cheapest_node->target && (*a) != cheapest_node) 
     {
-		rotate(a, "rr");
-        rotate(b, "\n");
+		rotate(a, '1');
+        rotate(b, '1');
+		ft_printf("rr\n");
     }
 	set_index(*a);
 	set_index(*b);
@@ -15,10 +16,11 @@ static void	rev_rotate_both(stack_i **a, stack_i **b, stack_i *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node) 
 	{
-        reverseRotate(a, "rrr");
-        reverseRotate(b, "\n");
+        reverseRotate(a, '1');
+        reverseRotate(b, '1');
+		ft_printf("rrr\n");
     }
-	set_index(*a); 
+	set_index(*a);
 	set_index(*b);
 }
 void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name) 
@@ -28,16 +30,16 @@ void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name)
 		if (stack_name == 'a')
 		{
 			if (top_node->median_top)
-				rotate(stack, "ra\n");
+				rotate(stack, 'a');
 			else
-				reverseRotate(stack, "rra\n");
+				reverseRotate(stack, 'a');
 		}
 		else if (stack_name == 'b') 
 		{
 			if (top_node->median_top)
-				rotate(stack, "rb\n");
+				rotate(stack, 'b');
 			else
-				reverseRotate(stack, "rrb\n");
+				reverseRotate(stack, 'b');
 		}
 	}
 }
@@ -46,11 +48,9 @@ void	final_move(stack_i **a)
 	while ((*a)->data != find_min_node(*a)->data)
 	{
 		if (find_min_node(*a)->median_top)
-		{
-			rotate(a, "ra\n");
-		}
+			rotate(a, 'a');
 		else
-			reverseRotate(a, "rra\n");
+			reverseRotate(a, 'a');
 	}
 }
 
@@ -65,12 +65,12 @@ void moves_a(stack_i **a, stack_i **b)
         rev_rotate_both(a, b, cheapest);
     prep_for_push(a, cheapest, 'a');
     prep_for_push(b, cheapest->target, 'b');
-    push(a, b, "pb\n");
+    push(a, b, 'b');
 }
 
 void moves_b(stack_i **a, stack_i **b)
 {
     prep_for_push(a, (*b)->target, 'a');
-    push(b, a, "pa\n");
+    push(b, a, 'a');
 }
 

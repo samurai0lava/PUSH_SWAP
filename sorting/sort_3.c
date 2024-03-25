@@ -20,13 +20,7 @@ static stack_i* find_max(stack_i* a)
 
     return (maxNode);
 }
-// static stack_i* first_node(stack_i* a, stack_i* last_node)
-// {
-//     if(a->next->next == last_node)
-//         return(a);
-//     return (NULL);
-    
-// }
+
 void sort_3(stack_i **a)
 {
     stack_i *maxNode;
@@ -37,16 +31,16 @@ void sort_3(stack_i **a)
 
     if(maxNode->data == (*a)->data)
     {
-        rotate(a, "ra\n");
+        rotate(a, 'a');
         if(!stack_sorted(*a))
-            swap(a, "sa\n");
+            swap(a, 'a');
     }
     else if (maxNode->data == lastNode->data)                
-        swap(a, "sa\n");
+        swap(a, 'a');
     else
     {
-        reverseRotate(a, "rra\n");
+        reverseRotate(a, 'a');
         if(!stack_sorted(*a))
-            swap(a, "sa\n");
+            swap(a, 'a');
     }
 }

@@ -62,7 +62,7 @@ void	set_index(stack_i *stack)
 	{
 		stack->current_position = i; 
 		if (i <= median) 
-			stack->median_top = true; 
+			stack->median_top = true;
 		else
 			stack->median_top = false;
 		stack = stack->next; 
@@ -86,7 +86,7 @@ void set_price_a(stack_i *a, stack_i *b)
         else if (a->median_top == 0)
             a->cost += a->target->current_position;
         else
-            a->cost += len_stack_a - a->target->current_position;
+            a->cost += len_stack_b - a->target->current_position;
         a = a->next;
     }
 }

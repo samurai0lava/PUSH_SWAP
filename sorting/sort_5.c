@@ -2,7 +2,7 @@
 
 stack_i	*find_min_node(stack_i *stack) 
 {
-	long			min; 
+	long	min; 
 	stack_i	*min_node; 
 
 	if (!stack)
@@ -19,10 +19,12 @@ stack_i	*find_min_node(stack_i *stack)
 	}
 	return (min_node); 
 }
-int find_min(stack_i *a)
+
+int	find_min(stack_i *a)
 {
-    int min;
-    while(a)
+    int	min;
+
+    while (a)
     {
         if(a->data < min)
             min = a->data;
@@ -32,9 +34,11 @@ int find_min(stack_i *a)
 
 }
 
-int get_index(stack_i *stack, int data)
+int	get_index(stack_i *stack, int data)
 {
-    int index = 0;
+    int	index;
+
+	index = 0;
     while (stack)
     {
         if (stack->data == data)
@@ -46,7 +50,7 @@ int get_index(stack_i *stack, int data)
 }
 
 
-void sort_5(stack_i **a, stack_i **b, int size)
+void	sort_5(stack_i **a, stack_i **b, int size)
 {
     int     min;
     stack_i *tmp;
@@ -59,17 +63,17 @@ void sort_5(stack_i **a, stack_i **b, int size)
         tmp = *a;
         min = find_min(*a);
         if (tmp->data == min)
-            push(a, b, "pb\n");
+            push(a, b, 'b');
         else
         {
             if(index <= size/2)
-                rotate(a, "ra\n");
+                rotate(a, 'a');
             else
-                reverseRotate(a, "rra\n");
+                reverseRotate(a, 'a');
         }
     }
     if (!stack_sorted(*a))
         sort_3(a);
     while (*b != NULL)
-        push(b, a, "pa\n");
+        push(b, a, 'a');
 }

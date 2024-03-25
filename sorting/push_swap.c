@@ -7,9 +7,9 @@ void	push_swap(stack_i **a, stack_i **b)
 
 	len_a = stack_len(*a);
 	if (len_a-- > 3 && !stack_sorted(*a))
-		push(a, b, "pb\n");
+		push(a, b, 'b');
 	if (len_a-- > 3 && !stack_sorted(*a))
-		push(a, b, "pb\n");
+		push(a, b, 'b');
 	while (len_a-- > 3 && !stack_sorted(*a))
 	{
 		init_param_a(*a, *b);
