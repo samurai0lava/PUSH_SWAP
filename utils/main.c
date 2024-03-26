@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
             freestack(a);
         }
         else
-        {   
+        {
             freestack(a);
             return (0); 
         }
