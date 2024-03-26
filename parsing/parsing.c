@@ -94,6 +94,7 @@ int	*atoi_ad(char **splitted)
 	int	*array;
 	int size;
 
+	array = NULL;
 	i = 0;
 	size = size_sp(splitted);
 	array = (int *)malloc(size * sizeof(int));

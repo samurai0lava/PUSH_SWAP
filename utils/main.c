@@ -18,7 +18,11 @@ int	main(int argc, char **argv)
         if (re == NULL)
             return (1);
         init(&a, re);
+        
+
         size = re->size;
+        // for (int i = 0; i < size; i++)
+        //     printf("array[%d]  =   %d\n", i, re->array[i]);
         free (re->array);
         free (re);
         if(!stack_sorted(a) || !isEmpty(a))
@@ -32,7 +36,9 @@ int	main(int argc, char **argv)
             else
                 push_swap(&a, &b);
             freestack(a);
+            // print_stack(a);
         }
+
         else
         {
             freestack(a);
