@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static stack_i* find_max(stack_i* a)
+stack_i* find_max(stack_i* a)
 {
     if (a == NULL)
         return NULL;

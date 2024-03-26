@@ -66,4 +66,5 @@ stack_i		*get_cheapest(stack_i *stack);
 void    	moves_b(stack_i **a, stack_i **b);
 int     	find_min(stack_i *a);
 void		final_move(stack_i **a);
+stack_i*    find_max(stack_i* a);
 #endif

@@ -21,7 +21,7 @@ static void	set_target_a(stack_i *a, stack_i *b)
 			current_b = current_b->next;
 		}
 		if (best_match == LONG_MIN)
-			a->target = find_min_node(b);
+			a->target = find_max(b);
 		else
 			a->target = target_node;
 		a = a->next;

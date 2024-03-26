@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
                 sort_5(&a, &b, size);
             else
                 push_swap(&a, &b);
-             
             freestack(a);
         }
         else
