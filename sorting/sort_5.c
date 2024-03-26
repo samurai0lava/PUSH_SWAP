@@ -22,8 +22,9 @@ stack_i	*find_min_node(stack_i *stack)
 
 int	find_min(stack_i *a)
 {
-    int	min;
+    long	min;
 
+    min = LONG_MAX;
     while (a)
     {
         if(a->data < min)

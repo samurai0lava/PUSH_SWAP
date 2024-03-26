@@ -63,7 +63,5 @@ void init(stack_i **a, array_s *re)
     {
         append_node(a, re->array[i]);
         i++;
-    } 
-    free (re->array);
-    free (re);
+    }
 }

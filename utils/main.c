@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
             return (1);
         init(&a, re);
         size = re->size;
+        free (re->array);
+        free (re);
         if(!stack_sorted(a) || !isEmpty(a))
         {
             if (size == 2)
