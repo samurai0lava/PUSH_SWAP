@@ -1,7 +1,7 @@
 NAME = push_swap
 LIB = libft/libft.a
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -O3 -Wall -Werror -Wextra 
 
 SRC = parsing/stack_init.c\
     utils/utils.c\
