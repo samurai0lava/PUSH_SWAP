@@ -46,7 +46,7 @@ array_s *parsing(int argc, char **argv)
     re = (array_s *)malloc(sizeof(array_s));
     if (re == NULL)
         error_quit("Error");
-    if (check_inputs(argc, argv) == 1) 
+    if (check_inputs(argc, argv) == 1 || check_inputs2(argc, argv) == 1) 
     {
         error_quit("Error");
         free(re);

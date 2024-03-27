@@ -35,6 +35,7 @@ int		    check_duplicate(int *array, size_t size);
 array_s     *parsing(int argc, char **argv);
 void	    error_quit(char *str);
 int		    check_inputs(int argc, char **argv);
+int         check_inputs2(int argc, char **argv);
 char	    **split_args(int argc, char **argv);
 int		    *atoi_ad(char **splitted);
 void        init(stack_i **stack, array_s *re);
