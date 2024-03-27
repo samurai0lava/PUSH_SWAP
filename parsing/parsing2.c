@@ -61,10 +61,10 @@ array_s *parsing(int argc, char **argv)
     }
     re->array = atoi_ad(splitted);
     re->size = size_sp(splitted);
-    if (check_duplicate(re->array, re->size) == 1) 
+    if (check_duplicate(re->array, re->size) == 1)
     {
         error_quit("Error");
-        free(re->array);
+        free(re->array);// function combine all of this
         free(re);
         free_array(splitted);
         return (NULL);
