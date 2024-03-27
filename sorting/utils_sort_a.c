@@ -34,7 +34,8 @@ void	set_cheapest(stack_i *stack)
 
 	if (!stack) 
 		return ;
-	cheapest_value = LONG_MAX; 
+	stack->cheapest = 0;
+	cheapest_value = LONG_MAX;
 	while (stack) 
 	{
 		if (stack->cost < cheapest_value) 
