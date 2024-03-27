@@ -20,26 +20,16 @@ stack_i	*find_max(stack_i *stack)
 	return (max_node);
 }
 
-void sort_3(stack_i **a)
+void	sort_3(stack_i **a) 
 {
-    stack_i *maxNode;
-    stack_i *lastNode;
-    
-    lastNode = find_last_node(*a);
-    maxNode = find_max(*a);
+	stack_i	*biggest_node; 
 
-    if(maxNode->data == (*a)->data)
-    {
-        rotate(a, 'a');
-        if(!stack_sorted(*a))
-            swap(a, 'a');
-    }
-    else if (maxNode->data == lastNode->data)                
-        swap(a, 'a');
-    else
-    {
-        reverseRotate(a, 'a');
-        if(!stack_sorted(*a))
-            swap(a, 'a');
-    }
+	biggest_node = find_max(*a);
+	if (biggest_node == *a) 
+		rotate(a, 'a'); 
+	else if ((*a)->next == biggest_node) 
+		reverseRotate(a, 'a'); 
+	if ((*a)->data > (*a)->next->data) 
+		swap(a, 'a');
 }
+
