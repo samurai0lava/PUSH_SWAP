@@ -29,10 +29,10 @@ void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name)
 	{
 		if (stack_name == 'a')
 		{
-			if (top_node->median_top)
-				rotate(stack, 'a');
-			else
+			if (!(top_node->median_top))
 				reverseRotate(stack, 'a');
+			else
+				rotate(stack, 'a');
 		}
 		else if (stack_name == 'b') 
 		{
