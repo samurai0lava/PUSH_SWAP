@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-static void	check_int_max(long double return_value, char **array, int *arr, t_array *re)
+static void	check_int_max(long double return_value, char **array, int *arr,
+														t_array *re)
 {
 	if (return_value > INT_MAX || return_value < INT_MIN)
 	{
