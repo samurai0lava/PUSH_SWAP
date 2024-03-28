@@ -11,18 +11,19 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-static void	check_int_max(long double return_value, char **array, int *arr)
+static void	check_int_max(long double return_value, char **array, int *arr, t_array *re)
 {
 	if (return_value > INT_MAX || return_value < INT_MIN)
 	{
 		free_array(array);
 		free(arr);
+		free(re);
 		ft_putendl_fd("Error", 2);
 		exit (1);
 	}
 }
 
-long double	ft_atoiv2(char *str, char **array, int *arr)
+long double	ft_atoiv2(char *str, char **array, int *arr, t_array *re)
 {
 	int			sign;
 	long double	return_value;
@@ -42,6 +43,6 @@ long double	ft_atoiv2(char *str, char **array, int *arr)
 		return_value = return_value * 10 + (*str - 48);
 		str++;
 	}
-	check_int_max(return_value, array, arr);
+	check_int_max(return_value, array, arr, re);
 	return (return_value * sign);
 }

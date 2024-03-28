@@ -71,7 +71,7 @@ t_array	*parsing(int argc, char **argv)
 		free(re);
 		return (NULL);
 	}
-	re->array = atoi_ad(splitted);
+	re->array = atoi_ad(splitted, re);
 	re->size = size_sp(splitted);
 	if (check_for_duplicates(re, splitted) == 1)
 		return (NULL);

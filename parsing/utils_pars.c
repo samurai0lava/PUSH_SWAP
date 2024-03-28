@@ -40,7 +40,7 @@ int	size_sp(char **splited)
 	return (size);
 }
 
-int	*atoi_ad(char **splitted)
+int	*atoi_ad(char **splitted, t_array *re)
 {
 	int	i;
 	int	*array;
@@ -54,7 +54,7 @@ int	*atoi_ad(char **splitted)
 		return (NULL);
 	while (splitted[i])
 	{
-		array[i] = ft_atoiv2(splitted[i], splitted, array);
+		array[i] = ft_atoiv2(splitted[i], splitted, array, re);
 		i++;
 	}
 	return (array);
