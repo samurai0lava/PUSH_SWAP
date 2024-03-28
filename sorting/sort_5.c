@@ -35,22 +35,6 @@ int	find_min(stack_i *a)
 
 }
 
-int	get_index(stack_i *stack, int data)
-{
-    int	index;
-
-	index = 0;
-    while (stack)
-    {
-        if (stack->data == data)
-            return index;
-        index++;
-        stack = stack->next;
-    }
-    return (index);
-}
-
-
 void	sort_5(stack_i **a, stack_i **b, int size)
 {
     int     min;

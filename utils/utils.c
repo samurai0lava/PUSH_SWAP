@@ -25,35 +25,6 @@ stack_i *createStack(int content)
     return (stack);
 }
 
-int isEmpty(stack_i* stack)
-{
-    return((stack -> top) == NULL);
-}
-
-int stack_len(stack_i *stack)
-{
-    int len = 0;
-    while (stack)
-    {
-        len++;
-        stack = stack->next;
-    }
-    return len;
-}
-
-int	stack_sorted(stack_i *stack)
-{
-	if (NULL == stack)
-		return (1);
-	while (stack->next)
-	{
-		if (stack->data > stack->next->data)
-			return (0);
-		stack = stack->next;
-	}
-	return (1);
-}
-
 void print_stack(stack_i *stack) 
 {
     stack_i *current ;

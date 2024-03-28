@@ -1,7 +1,7 @@
 NAME = push_swap
 LIB = libft/libft.a
 CC = cc
-CFLAGS = -O3 -Wall -Werror -Wextra 
+CFLAGS = -Wall -Werror -Wextra 
 
 SRC = parsing/stack_init.c\
     utils/utils.c\
@@ -16,7 +16,8 @@ SRC = parsing/stack_init.c\
 	sorting/utils_sort_b.c\
 	sorting/push_swap.c\
 	sorting/moves.c\
-	utils/ft_atoiv2.c
+	utils/ft_atoiv2.c\
+	sorting/utils_sorting.c\
 	
 OBJ = $(SRC:.c=.o)
 

@@ -9,3 +9,9 @@ int empty(char *str)
 		return (1);
 	return (0);
 }
+
+void error_quit(char *str)
+{
+	ft_putendl_fd(str, 2);
+	return;
+}
