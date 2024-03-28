@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 #include "../push_swap.h"
 
-int check_duplicate(int *array, size_t size)
+int	check_duplicate(int *array, size_t size)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (i < size - 1)
@@ -31,49 +31,50 @@ int check_duplicate(int *array, size_t size)
 	return (0);
 }
 
-
-static int validate_inputs(int argc, char **argv, array_s *re) 
+static int	validate_inputs(int argc, char **argv, t_array *re)
 {
-    if (check_inputs(argc, argv) == 1 || check_inputs2(argc, argv) == 1) 
+	if (check_inputs(argc, argv) == 1 || check_inputs2(argc, argv) == 1)
 	{
-        error_quit("Error");
-        free(re);
-        return (1);
-    }
-    return (0);
+		error_quit("Error");
+		free(re);
+		return (1);
+	}
+	return (0);
 }
-static int check_for_duplicates(array_s *re, char **splitted) 
-{
-    if (check_duplicate(re->array, re->size) == 1) 
-	{
-        error_quit("Error");
-        free(re->array);
-        free(re);
-        free_array(splitted);
-        return 1;
-    }
-    return (0);
-}
-array_s *parsing(int argc, char **argv) 
-{
-    array_s	*re;
-    char	**splitted;
 
-    re = (array_s *)malloc(sizeof(array_s));
-    if (re == (NULL))
-        error_quit("Error");
-    if (validate_inputs(argc, argv, re) == 1)
-        return (NULL);
-    splitted = split_args(argc, argv);
-    if (splitted == (NULL)) 
+static int	check_for_duplicates(t_array *re, char **splitted)
+{
+	if (check_duplicate(re->array, re->size) == 1)
 	{
-        free(re);
-        return (NULL);
-    }
-    re->array = atoi_ad(splitted);
-    re->size = size_sp(splitted);
-    if (check_for_duplicates(re, splitted) == 1)
-        return (NULL);
-    free_array(splitted);
-    return re;
+		error_quit("Error");
+		free(re->array);
+		free(re);
+		free_array(splitted);
+		return (1);
+	}
+	return (0);
+}
+
+t_array	*parsing(int argc, char **argv)
+{
+	t_array	*re;
+	char	**splitted;
+
+	re = (t_array *)malloc(sizeof(t_array));
+	if (re == (NULL))
+		error_quit("Error");
+	if (validate_inputs(argc, argv, re) == 1)
+		return (NULL);
+	splitted = split_args(argc, argv);
+	if (splitted == (NULL))
+	{
+		free(re);
+		return (NULL);
+	}
+	re->array = atoi_ad(splitted);
+	re->size = size_sp(splitted);
+	if (check_for_duplicates(re, splitted) == 1)
+		return (NULL);
+	free_array(splitted);
+	return (re);
 }

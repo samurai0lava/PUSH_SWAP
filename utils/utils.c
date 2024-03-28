@@ -6,61 +6,47 @@
 /*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:54:26 by iouhssei          #+#    #+#             */
-/*   Updated: 2024/03/04 16:54:29 by iouhssei         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:16:55 by iouhssei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../push_swap.h"
 
-stack_i *createStack(int content) 
+t_stack	*createstack(int content)
 {
-    stack_i* stack; 
-    
-    stack = (stack_i*)malloc(sizeof(stack_i));
-    if (!stack) 
-        return (NULL);
-    stack->next = NULL;
-    stack->top = NULL;
-    stack->data = content;
-    return (stack);
+	t_stack	*stack;
+
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	if (!stack)
+		return (NULL);
+	stack->next = NULL;
+	stack->top = NULL;
+	stack->data = content;
+	return (stack);
 }
 
-void print_stack(stack_i *stack) 
+void	freestack(t_stack *stack)
 {
-    stack_i *current ;
-    
-    current = stack;
-    while (current != NULL) 
-    {
-        printf("%d ", current->data);
-        current = current->next;
-    }
-    printf("\n");
+	t_stack	*current;
+	t_stack	*temp;
+
+	current = stack;
+	while (current != NULL)
+	{
+		temp = current;
+		current = current->next;
+		free(temp);
+	}
 }
 
-void freestack(stack_i *stack) 
+void	free_array(char **str)
 {
-    stack_i *current;
-    stack_i *temp;
+	int	i;
 
-    current = stack;
-    while (current != NULL) 
-    {
-        temp = current;
-        current = current->next;
-        free(temp);
-    }
-}
-
-void free_array(char **str)
-{
-    int i;
-
-    i = 0;
-    while(str[i] != NULL)
-    {
-        free(str[i]);
-        i++;
-    }
-    free(str);
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

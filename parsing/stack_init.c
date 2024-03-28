@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
+/*   t_stacknit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-stack_i	*find_last_node(stack_i *head)
+t_stack	*find_last_node(t_stack *head)
 {
 	if (head == NULL)
 		return (NULL);
@@ -21,16 +21,16 @@ stack_i	*find_last_node(stack_i *head)
 	return (head);
 }
 
-static void append_node(stack_i **stack, int nbr)
+static void	append_node(t_stack **stack, int nbr)
 {
-    stack_i *node;
-    stack_i *last_node;
+	t_stack	*node;
+	t_stack	*last_node;
 
 	if (stack == NULL)
-		return;
-	node = malloc(sizeof(stack_i));
+		return ;
+	node = malloc(sizeof(t_stack));
 	if (node == NULL)
-		return;
+		return ;
 	node->next = NULL;
 	node->data = nbr;
 	if (*stack == NULL)
@@ -46,18 +46,18 @@ static void append_node(stack_i **stack, int nbr)
 	}
 }
 
-void init(stack_i **a, array_s *re) 
+void	init(t_stack **a, t_array *re)
 {
-	int i;
+	int	i;
 
-	*a = createStack(re->array[0]);
+	*a = createstack(re->array[0]);
 	if (*a == NULL)
-    {
+	{
 		ft_putendl_fd("Error\n", 2);
-		return;
+		return ;
 	}
 	i = 1;
-	while (i < re->size) 
+	while (i < re->size)
 	{
 		append_node(a, re->array[i]);
 		i++;

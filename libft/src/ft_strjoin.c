@@ -33,10 +33,9 @@ char	*ft_strjoin( char *stash, char *buffer)
 	i = -1;
 	j = 0;
 	while (stash[++i] != '\0')
-			line[i] = stash[i];
+		line[i] = stash[i];
 	while (buffer[j] != '\0')
 		line[i++] = buffer[j++];
 	line[ft_strlen(stash) + ft_strlen(buffer)] = '\0';
-
 	return (line);
 }

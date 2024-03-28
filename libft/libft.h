@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/28 14:11:57 by iouhssei          #+#    #+#             */
+/*   Updated: 2024/03/28 14:12:00 by iouhssei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -62,19 +74,19 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 //GNL
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
 
-char	*get_next_line(int fd);
-char	*free_and_null(char *op);
+char				*get_next_line(int fd);
+char				*free_and_null(char *op);
 //PRINTF
-int		ft_putchar(int c);
-int		ft_putstr(char *str);
-int		ft_putnbr_base(long nbr, int base, int check);
-int		ft_putptr(void *ptr);
-int		ft_printf(const char *format, ...);
+int					ft_putchar(int c);
+int					ft_putstr(char *str);
+int					ft_putnbr_base(long nbr, int base, int check);
+int					ft_putptr(void *ptr);
+int					ft_printf(const char *format, ...);
 
 #endif

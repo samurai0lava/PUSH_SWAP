@@ -1,67 +1,78 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/28 16:20:06 by iouhssei          #+#    #+#             */
+/*   Updated: 2024/03/28 16:20:07 by iouhssei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-static void	rotate_both(stack_i **a, stack_i **b, stack_i *cheapest_node) 
+static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
-	while ((*b) != cheapest_node->target && (*a) != cheapest_node) 
-    {
-		rotate(a, '1');
-        rotate(b, '1');
-		ft_printf("rr\n");
-    }
-	set_index(*a);
-	set_index(*b);
-}
-
-static void	rev_rotate_both(stack_i **a, stack_i **b, stack_i *cheapest_node) 
-{
-	while (*b != cheapest_node->target && *a != cheapest_node) 
+	while ((*b) != cheapest_node->target && (*a) != cheapest_node)
 	{
-        reverseRotate(a, '1');
-        reverseRotate(b, '1');
-		ft_printf("rrr\n");
-    }
+		rotate(a, '1');
+		rotate(b, '1');
+		ft_printf("rr\n");
+	}
 	set_index(*a);
 	set_index(*b);
 }
 
-void	prep_for_push(stack_i **stack, stack_i *top_node, char stack_name) 
+static void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
-	while (*stack != top_node) 
+	while (*b != cheapest_node->target && *a != cheapest_node)
+	{
+		reverserotate(a, '1');
+		reverserotate(b, '1');
+		ft_printf("rrr\n");
+	}
+	set_index(*a);
+	set_index(*b);
+}
+
+void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
+{
+	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
 		{
 			if (!(top_node->median_top))
-				reverseRotate(stack, 'a');
+				reverserotate(stack, 'a');
 			else
 				rotate(stack, 'a');
 		}
-		else if (stack_name == 'b') 
+		else if (stack_name == 'b')
 		{
 			if (top_node->median_top)
 				rotate(stack, 'b');
 			else
-				reverseRotate(stack, 'b');
+				reverserotate(stack, 'b');
 		}
 	}
 }
 
-void moves_a(stack_i **a, stack_i **b)
+void	moves_a(t_stack **a, t_stack **b)
 {
-    stack_i *cheapest;
+	t_stack	*cheapest;
 
-    cheapest = get_cheapest(*a);
-    if(cheapest->median_top && cheapest->target->median_top)
-        rotate_both(a, b, cheapest);
-    else if (!(cheapest->median_top) && !(cheapest->target->median_top))
-        rev_rotate_both(a, b, cheapest);
-    prep_for_push(a, cheapest, 'a');
-    prep_for_push(b, cheapest->target, 'b');
-    push(a, b, 'b');
+	cheapest = get_cheapest(*a);
+	if (cheapest->median_top && cheapest->target->median_top)
+		rotate_both(a, b, cheapest);
+	else if (!(cheapest->median_top) && !(cheapest->target->median_top))
+		rev_rotate_both(a, b, cheapest);
+	prep_for_push(a, cheapest, 'a');
+	prep_for_push(b, cheapest->target, 'b');
+	push(a, b, 'b');
 }
 
-void moves_b(stack_i **a, stack_i **b)
+void	moves_b(t_stack **a, t_stack **b)
 {
-    prep_for_push(a, (*b)->target, 'a');
-    push(b, a, 'a');
+	prep_for_push(a, (*b)->target, 'a');
+	push(b, a, 'a');
 }
-

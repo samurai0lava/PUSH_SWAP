@@ -18,10 +18,10 @@ int	check_inputs(int argc, char **argv)
 	int	j;
 
 	i = 1;
-	while (i < argc) 
+	while (i < argc)
 	{
 		if (empty(argv[i]) == 1)
-			return 1;
+			return (1);
 		j = 0;
 		while (argv[i][j])
 		{
@@ -37,8 +37,8 @@ int	check_inputs(int argc, char **argv)
 
 int	check_inputs2(int argc, char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
@@ -60,69 +60,54 @@ int	check_inputs2(int argc, char **argv)
 	return (0);
 }
 
-char	**split_args(int argc, char **argv)
+static size_t	total_l(int argc, char **argv)
 {
 	int		i;
-	char	*arg;
-	char	**splitted;
 	size_t	total_length;
 
-	if (argc < 2 || argv == NULL)
-	{
-		return (NULL);
-	}
-	arg = NULL;//and this
-	splitted = NULL;
 	total_length = 0;
-	i = 1;//own function
+	i = 1;
 	while (i < argc)
 	{
 		total_length += ft_strlen(argv[i]);
 		i++;
 	}
+	return (total_length);
+}
+
+static void	split_arg(int argc, char **argv, char *arg)
+{
+	int		i;
+	size_t	total_length;
+
+	total_length = total_l(argc, argv);
+	i = 1;
+	while (i < argc)
+	{
+		ft_strlcat(arg, argv[i], total_length + argc - 1);
+		if (i < argc - 1)
+			ft_strlcat(arg, " ", total_length + argc - 1);
+		i++;
+	}
+}
+
+char	**split_args(int argc, char **argv)
+{
+	char	*arg;
+	char	**splitted;
+	size_t	total_length;
+
+	if (argc < 2 || argv == NULL)
+		return (NULL);
+	arg = NULL;
+	splitted = NULL;
+	total_length = total_l(argc, argv);
 	arg = (char *)malloc(total_length + argc - 1);
 	if (!arg)
 		return (NULL);
 	arg[0] = '\0';
-	i = 1;
-	while (i < argc)
-	{
-		ft_strlcat(arg, argv[i], total_length + argc - 1); 
-		if (i < argc - 1)
-			ft_strlcat(arg, " ", total_length + argc - 1); 
-		i++;
-	}
+	split_arg(argc, argv, arg);
 	splitted = ft_split(arg, ' ');
 	free(arg);
 	return (splitted);
-}
-
-int	size_sp(char **splited)
-{
-	int	size;
-
-	size = 0;
-	while (splited[size] != NULL)
-		size++;
-	return (size);
-}
-
-int	*atoi_ad(char **splitted)
-{
-	int	i;
-	int	*array;
-	int size;
-
-	array = NULL;
-	i = 0;
-	size = size_sp(splitted);
-	array = (int *)malloc(size * sizeof(int));
-	if (!array)
-		return (NULL);
-	while (splitted[i])
-	{
-		array[i] = ft_atoiv2(splitted[i], splitted, array);
-		i++;
-	}
-	return (array);
 }

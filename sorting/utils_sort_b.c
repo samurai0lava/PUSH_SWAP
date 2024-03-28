@@ -1,33 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_sort_b.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/28 16:30:38 by iouhssei          #+#    #+#             */
+/*   Updated: 2024/03/28 16:30:40 by iouhssei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-static void	set_target_b(stack_i *a, stack_i *b) 
+static void	set_target_b(t_stack *a, t_stack *b)
 {
-	stack_i	*current_a; 
-	stack_i	*target; 
-	long	best_match_index; 
+	t_stack	*current_a;
+	t_stack	*target;
+	long	best_match_index;
 
 	while (b)
 	{
-		best_match_index = LONG_MAX; 
-		current_a = a; 
-		while (current_a) 
+		best_match_index = LONG_MAX;
+		current_a = a;
+		while (current_a)
 		{
-			if (current_a->data > b->data && current_a->data < best_match_index) 
+			if (current_a->data > b->data && current_a->data < best_match_index)
 			{
-				best_match_index = current_a->data; 
-				target = current_a; 
+				best_match_index = current_a->data;
+				target = current_a;
 			}
-			current_a = current_a->next; 
+			current_a = current_a->next;
 		}
-		if (best_match_index == LONG_MAX) 
-			b->target = find_min_node(a); 
+		if (best_match_index == LONG_MAX)
+			b->target = find_min_node(a);
 		else
-			b->target = target; 
-		b = b->next; 
+			b->target = target;
+		b = b->next;
 	}
 }
 
-stack_i	*get_cheapest(stack_i *stack)
+t_stack	*get_cheapest(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -40,7 +52,7 @@ stack_i	*get_cheapest(stack_i *stack)
 	return (NULL);
 }
 
-void	init_param_b(stack_i *a, stack_i *b)
+void	init_param_b(t_stack *a, t_stack *b)
 {
 	set_index(a);
 	set_index(b);

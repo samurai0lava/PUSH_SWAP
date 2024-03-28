@@ -1,32 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_sorting.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iouhssei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/28 17:12:41 by iouhssei          #+#    #+#             */
+/*   Updated: 2024/03/28 17:12:43 by iouhssei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void	final_move(stack_i **a) 
+void	final_move(t_stack **a)
 {
 	while ((*a)->data != find_min_node(*a)->data)
 	{
 		if (find_min_node(*a)->median_top)
 			rotate(a, 'a');
 		else
-			reverseRotate(a, 'a');
+			reverserotate(a, 'a');
 	}
 }
 
-int	get_index(stack_i *stack, int data)
+int	get_index(t_stack *stack, int data)
 {
-    int	index;
+	int	index;
 
 	index = 0;
-    while (stack)
-    {
-        if (stack->data == data)
-            return index;
-        index++;
-        stack = stack->next;
-    }
-    return (index);
+	while (stack)
+	{
+		if (stack->data == data)
+			return (index);
+		index++;
+		stack = stack->next;
+	}
+	return (index);
 }
 
-int	stack_sorted(stack_i *stack)
+int	stack_sorted(t_stack *stack)
 {
 	if (NULL == stack)
 		return (1);
@@ -39,18 +51,20 @@ int	stack_sorted(stack_i *stack)
 	return (1);
 }
 
-int isEmpty(stack_i* stack)
+int	isempty(t_stack	*stack)
 {
-    return((stack -> top) == NULL);
+	return ((stack -> top) == NULL);
 }
 
-int stack_len(stack_i *stack)
+int	stack_len(t_stack *stack)
 {
-    int len = 0;
-    while (stack)
-    {
-        len++;
-        stack = stack->next;
-    }
-    return len;
+	int	len;
+
+	len = 0;
+	while (stack)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return (len);
 }
