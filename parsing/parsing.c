@@ -20,12 +20,12 @@ int	check_inputs(int argc, char **argv)
 	i = 1;
 	while (i < argc) 
 	{
-		if(empty(argv[i]) == 1)
+		if (empty(argv[i]) == 1)
 			return 1;
 		j = 0;
 		while (argv[i][j])
-		{	
-			if((argv[i][j] == '+' || argv[i][j] == '-') \
+		{
+			if ((argv[i][j] == '+' || argv[i][j] == '-') \
 							&& (ft_isdigit(argv[i][j - 1])))
 				return (1);
 			j++;
@@ -34,13 +34,14 @@ int	check_inputs(int argc, char **argv)
 	}
 	return (0);
 }
+
 int	check_inputs2(int argc, char **argv)
 {
 	int i;
 	int j;
 
 	i = 1;
-	while(i < argc)
+	while (i < argc)
 	{
 		j = 0;
 		while (argv[i][j])
@@ -50,26 +51,25 @@ int	check_inputs2(int argc, char **argv)
 				return (1);
 			if ((argv[i][j] == '+' || argv[i][j] == '-') \
 					&& (argv[i][j + 1] == '+' || argv[i][j + 1] == '-' \
-                            || argv[i][j + 1] == '\0' || argv[i][j + 1] == ' '))
+					|| argv[i][j + 1] == '\0' || argv[i][j + 1] == ' '))
 				return (1);
 			j++;
 		}
 		i++;
 	}
-	return(0);
+	return (0);
 }
 
-
-char	**split_args(int argc, char **argv) 
+char	**split_args(int argc, char **argv)
 {
-    int		i;
-    char	*arg;
-    char	**splitted;
-    size_t	total_length;
+	int		i;
+	char	*arg;
+	char	**splitted;
+	size_t	total_length;
 
-    if (argc < 2 || argv == NULL)
+	if (argc < 2 || argv == NULL)
 	{
-        return (NULL);
+		return (NULL);
 	}
 	arg = NULL;//and this
 	splitted = NULL;
@@ -80,10 +80,10 @@ char	**split_args(int argc, char **argv)
 		total_length += ft_strlen(argv[i]);
 		i++;
 	}
-	arg = (char *)malloc(total_length + argc - 1);//use calloc
+	arg = (char *)malloc(total_length + argc - 1);
 	if (!arg)
 		return (NULL);
-	arg[0] = '\0';//if i use calloc i will not use this
+	arg[0] = '\0';
 	i = 1;
 	while (i < argc)
 	{

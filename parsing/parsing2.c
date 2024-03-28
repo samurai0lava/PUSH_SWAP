@@ -38,37 +38,37 @@ int check_duplicate(int *array, size_t size)
 	return (0);
 }
 
-array_s *parsing(int argc, char **argv) 
+array_s	*parsing(int argc, char **argv) 
 {
-    array_s *re;
-    char    **splitted;
+	array_s	*re;
+	char	**splitted;
 
-    re = (array_s *)malloc(sizeof(array_s));
-    if (re == NULL)
-        error_quit("Error");
-    if (check_inputs(argc, argv) == 1 || check_inputs2(argc, argv) == 1) 
-    {
-        error_quit("Error");
-        free(re);
-        return(NULL);
-    }
-    splitted = split_args(argc, argv);
-    if (splitted == NULL) 
-    {
-        free(re);
-        free(re->array);
-        return (NULL);
-    }
-    re->array = atoi_ad(splitted);
-    re->size = size_sp(splitted);
-    if (check_duplicate(re->array, re->size) == 1)
-    {
-        error_quit("Error");
-        free(re->array);// function combine all of this
-        free(re);
-        free_array(splitted);
-        return (NULL);
-    }
-    free_array(splitted);
-    return (re);
+	re = (array_s *)malloc(sizeof(array_s));
+	if (re == NULL)
+		error_quit("Error");
+	if (check_inputs(argc, argv) == 1 || check_inputs2(argc, argv) == 1) 
+	{
+		error_quit("Error");
+		free(re);
+		return (NULL);
+	}
+	splitted = split_args(argc, argv);
+	if (splitted == NULL) 
+	{
+		free(re);
+		free(re->array);
+		return (NULL);
+	}
+	re->array = atoi_ad(splitted);
+	re->size = size_sp(splitted);
+	if (check_duplicate(re->array, re->size) == 1)
+	{
+		error_quit("Error");
+		free(re->array);// function combine all of this
+		free(re);
+		free_array(splitted);
+		return (NULL);
+	}
+	free_array(splitted);
+	return (re);
 }
