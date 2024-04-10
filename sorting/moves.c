@@ -12,37 +12,39 @@
 
 #include "../push_swap.h"
 
-static void rr(t_stack **a, t_stack **b)
+void rr(t_stack **a, t_stack **b, char c)
 {
 	rotate(a, '1');
 	rotate(b, '1');
-	ft_printf("rr\n");
+	if (c == '1')
+		ft_printf("rr\n");
 }
-static void rrr(t_stack **a, t_stack **b)
+void rrr(t_stack **a, t_stack **b, char c)
 {
 	reverserotate(a, '1');
 	reverserotate(b, '1');
-	ft_printf("rrr\n");
+	if (c == '1')
+		ft_printf("rrr\n");
 
 }
 static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while ((*b) != cheapest_node->target && (*a) != cheapest_node)
 	{
-		rr(a, b);
+		rr(a, b,'1');
+		set_index(*a);
+		set_index(*b);
 	}
-	set_index(*a);
-	set_index(*b);
 }
 
 static void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
-	while (*b != cheapest_node->target && *a != cheapest_node)
+	while ((*b) != cheapest_node->target && (*a) != cheapest_node)
 	{
-		rrr(a ,b);
+		rrr(a ,b, '1');
+		set_index(*a);
+		set_index(*b);
 	}
-	set_index(*a);
-	set_index(*b);
 }
 
 void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name)
