@@ -12,13 +12,24 @@
 
 #include "../push_swap.h"
 
+static void rr(t_stack **a, t_stack **b)
+{
+	rotate(a, '1');
+	rotate(b, '1');
+	ft_printf("rr\n");
+}
+static void rrr(t_stack **a, t_stack **b)
+{
+	reverserotate(a, '1');
+	reverserotate(b, '1');
+	ft_printf("rrr\n");
+
+}
 static void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while ((*b) != cheapest_node->target && (*a) != cheapest_node)
 	{
-		rotate(a, '1');
-		rotate(b, '1');
-		ft_printf("rr\n");
+		rr(a, b);
 	}
 	set_index(*a);
 	set_index(*b);
@@ -28,9 +39,7 @@ static void	rev_rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node)
 {
 	while (*b != cheapest_node->target && *a != cheapest_node)
 	{
-		reverserotate(a, '1');
-		reverserotate(b, '1');
-		ft_printf("rrr\n");
+		rrr(a ,b);
 	}
 	set_index(*a);
 	set_index(*b);
@@ -62,10 +71,10 @@ void	moves_a(t_stack **a, t_stack **b)
 	t_stack	*cheapest;
 
 	cheapest = get_cheapest(*a);
-	if (cheapest->median_top && cheapest->target->median_top)
-		rotate_both(a, b, cheapest);
+	if ((cheapest->median_top) && (cheapest->target->median_top))
+		{rotate_both(a, b, cheapest);}
 	else if (!(cheapest->median_top) && !(cheapest->target->median_top))
-		rev_rotate_both(a, b, cheapest);
+		{rev_rotate_both(a, b, cheapest);}
 	prep_for_push(a, cheapest, 'a');
 	prep_for_push(b, cheapest->target, 'b');
 	push(a, b, 'b');
